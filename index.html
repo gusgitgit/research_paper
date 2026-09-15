@@ -478,6 +478,7 @@
       <button class="nav-tab-btn active" data-tab="catalog">📚 Paper Catalog (22)</button>
       <button class="nav-tab-btn" data-tab="blueprint">⚙️ DOAS Engineering Blueprint</button>
       <button class="nav-tab-btn" data-tab="benchmark">🧪 Working Fluid Benchmark</button>
+      <button class="nav-tab-btn" data-tab="fab-bm">🏭 Semiconductor HVAC BM</button>
     </div>
 
     <!-- TAB 1: CATALOG -->
@@ -592,6 +593,45 @@
               </tr>
             </tbody>
           </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 4: FAB BM -->
+    <div id="tab-fab-bm" class="tab-pane">
+      <div class="arch-card">
+        <h3>1. TSMC: Machine Learning 기반 냉각수 플랜트 최적화 및 공정 AMC 제어</h3>
+        <p>TSMC는 전 세계 반도체 파운드리 중 가장 공격적으로 AI/ML을 HVAC에 도입하고 있습니다. 냉동기(Chiller) 및 냉각탑(Cooling Tower) 스태징(Staging)에 머신러닝 모델을 도입하여 외기 온도와 공정 부하 예측을 통해 연간 5~10%의 전력을 절감하고 있습니다.</p>
+        <ul>
+          <li><strong>AMC 제어 (외조기 MAU)</strong>: 미세 공정(3nm 이하)에서 치명적인 수용성 가스(NH3, SOx) 및 VOC를 제거하기 위해 케미컬 필터와 수세정기(Air Washer)를 혼용합니다.</li>
+          <li><strong>수자원 재활용</strong>: 응축수 회수(Condensate Recovery) 및 초순수(UPW) 리사이클링 비율을 극대화하여 공장 단위 수자원 자립도를 높입니다.</li>
+        </ul>
+        <div class="formula-box">
+          ★ LD-DOAS 융합 인사이트: CrecoPLUS와 같은 이온성 액체는 수분 제습뿐만 아니라 NH3, H2S 등 극성 기체 물질(AMC) 흡수 능력이 탁월하여 MAU 내 케미컬 필터 수명을 대폭 연장할 수 있습니다.
+        </div>
+      </div>
+
+      <div class="arch-card">
+        <h3>2. 삼성전자(SEC): AI-HVAC 디지털 트윈 및 폐열 회수(Heat Recovery) 사이클</h3>
+        <p>삼성전자 평택 캠퍼스 등 최신 팹은 디지털 트윈(Digital Twin) 기반의 AI-HVAC 통합 관제 시스템을 선도적으로 적용하여 최적 운전 곡선을 도출하고 있습니다.</p>
+        <ul>
+          <li><strong>Heat Recovery Chiller (HRC)</strong>: 반도체 공정 장비에서 지속적으로 발생하는 방대한 폐열(Cooling Water)을 열회수 냉동기로 회수하여, 동절기 외조기(MAU)의 난방용 온수로 재활용합니다. 이를 통해 스팀 사용량을 획기적으로 감축했습니다.</li>
+          <li><strong>Plume Abatement</strong>: 동절기 냉각탑 백연(Plume)을 방지하기 위해 건/습식 혼합형 냉각탑을 채택하여 민원 방지 및 용수 절감을 달성합니다.</li>
+        </ul>
+        <div class="formula-box">
+          ★ LD-DOAS 융합 인사이트: HRC에서 얻은 중저온 온수(50~65 °C)를 LD-DOAS 재생기의 구동 열원으로 직접 활용하면 추가 에너지 투입 없이 제습 사이클을 완성할 수 있습니다.
+        </div>
+      </div>
+
+      <div class="arch-card">
+        <h3>3. SK하이닉스(SK Hynix): 초절수형 냉각 시스템 및 외조기 열회수 런어라운드</h3>
+        <p>SK하이닉스는 'Water Free' 및 용수 절감을 ESG 최우선 과제로 삼고 공조 인프라를 혁신하고 있습니다.</p>
+        <ul>
+          <li><strong>초절수형 냉각 시스템</strong>: 증발 잠열에 의존하는 기존 습식 냉각탑 비중을 줄이고, 현열 교환 중심의 하이브리드 냉각탑 및 공랭식 방열 시스템을 도입하여 증발수(Make-up water) 소비를 억제합니다.</li>
+          <li><strong>외조기(MAU) Run-around Coil</strong>: 실내 배기(EA)가 보유한 열에너지를 런어라운드 코일을 통해 흡입 외기(OA)로 전달하여 냉난방 피크 부하를 크게 낮춥니다.</li>
+        </ul>
+        <div class="formula-box">
+          ★ LD-DOAS 융합 인사이트: Zheng et al. (2025) 논문에 증명되었듯, 배기(EA) 스캐빈징 기법을 이온액체 재생기에 결합하면 재생기 탈습 능력을 42% 증폭시키면서 동시 열회수가 가능합니다.
         </div>
       </div>
     </div>

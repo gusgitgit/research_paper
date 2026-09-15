@@ -101,3 +101,22 @@ research_paper/
    - Use **internally-cooled fin-tube falling-film contactors** or **hollow-fiber membrane contactors**.
 4. **Pumping & Piping**:
    - Size piping one diameter step up compared to standard water lines to limit laminar flow friction losses.
+
+---
+
+## 🏭 5. Semiconductor HVAC Benchmark (TSMC, Samsung, SK Hynix)
+
+1. **TSMC**: Machine Learning-based Chiller Optimization & AMC Control
+   - Optimizes Chiller/Cooling Tower staging using ML, reducing 5-10% energy.
+   - Heavy focus on AMC (Airborne Molecular Contaminants) filtration in MAUs. 
+   - **LD-DOAS Insight**: Ionic liquids like CrecoPLUS simultaneously absorb moisture and polar gases (NH3, H2S), dramatically extending chemical filter lifespans in cleanrooms.
+
+2. **Samsung Electronics (SEC)**: AI-HVAC & Heat Recovery
+   - Integrates Digital Twin and AI for HVAC operations.
+   - Utilizes Heat Recovery Chillers (HRC) to reclaim massive waste heat from fabs for winter MAU heating.
+   - **LD-DOAS Insight**: 50-65°C low-grade waste heat from SEC's HRCs matches exactly with CrecoPLUS regeneration temperatures, enabling zero-additional-heat dehumidification.
+
+3. **SK Hynix**: Water-Free Cooling & Exhaust Heat Recovery
+   - ESG focus on reducing cooling tower make-up water via hybrid/dry coolers.
+   - EA (Exhaust Air) run-around coils to recover energy.
+   - **LD-DOAS Insight**: Merging EA scavenging (Zheng et al. 2025) into the LD-DOAS regenerator amplifies desorption by 42% while reclaiming exhaust sensible heat.
