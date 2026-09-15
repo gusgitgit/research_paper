@@ -105,7 +105,7 @@
     .arch-card li strong { color: #f8fafc; }
     .formula-box { background: #090d16; border-left: 3px solid var(--primary); padding: 0.85rem 1.25rem; margin: 1.25rem 0; font-family: 'JetBrains Mono', monospace; color: #38bdf8; font-size: 0.95rem; line-height: 1.5; }
     
-    .mermaid-container { background: #090d16; padding: 2rem; border-radius: 8px; border: 1px solid var(--surface-border); overflow-x: auto; margin: 1.5rem 0; text-align: center; }
+    .mermaid-container { background: #090d16; padding: 2rem; border-radius: 8px; border: 1px solid var(--surface-border); overflow-x: auto; margin: 1.5rem 0; text-align: center; min-height: 200px; display: flex; justify-content: center; align-items: center; }
 
     /* Modals & Toast */
     .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(9, 13, 22, 0.85); backdrop-filter: blur(4px); z-index: 1000; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
@@ -187,9 +187,9 @@
     <!-- VIEW 2: SEMICONDUCTOR HVAC BENCHMARK -->
     <div id="view-fab-bm" class="main-view">
       <header>
-        <div class="badge-hero fab-theme">🏭 Global Foundry HVAC Benchmark (2026)</div>
+        <div class="badge-hero fab-theme">🏭 Global Semiconductor Fab HVAC Benchmark (2026)</div>
         <h1 class="fab-title">반도체 설비/공조(HVAC) 첨단 신기술 도입 동향</h1>
-        <p class="hero-desc">TSMC, 삼성전자, SK하이닉스, 마이크론, 인텔 등 글로벌 Top-Tier 반도체 기업들의 냉동기, 냉각탑, 외조기(MAU) 및 초정밀 수처리(PCW) 설비 관련 신기술 연구 및 현장 적용 벤치마크 심층 분석 보고서입니다.</p>
+        <p class="hero-desc">삼성전자(Memory/Foundry), SK하이닉스, 마이크론, TSMC, 인텔 등 글로벌 Top-Tier 반도체 기업들의 냉동기, 냉각탑, 외조기(MAU) 및 초정밀 수처리(PCW) 설비 관련 신기술 연구 및 현장 적용 벤치마크 심층 분석 보고서입니다.</p>
       </header>
 
       <!-- 1. CHILLER -->
@@ -319,7 +319,15 @@
   </div>
 
   <script>
-    mermaid.initialize({ startOnLoad: true, theme: 'dark', securityLevel: 'loose' });
+    // FIX: Do not start on load. We will render mermaid manually when the view is active.
+    // Why? SVG calculates bounding box as 0x0 if parent div is display:none on page load.
+    mermaid.initialize({ startOnLoad: false, theme: 'dark', securityLevel: 'loose' });
+    let mermaidRendered = false;
+
+    // Globals for Paper Rendering
+    let currentFilter = 'all';
+    let currentSort = 'year-desc';
+    let searchQuery = '';
 
     const topNavBtns = document.querySelectorAll('.top-nav-btn');
     const mainViews = document.querySelectorAll('.main-view');
@@ -331,6 +339,14 @@
         const targetId = btn.getAttribute('data-view');
         mainViews.forEach(v => v.classList.remove('active'));
         document.getElementById(targetId).classList.add('active');
+        
+        // Critical Fix: Render Mermaid graphs only when the tab becomes visible!
+        if (targetId === 'view-fab-bm' && !mermaidRendered) {
+          setTimeout(() => {
+            mermaid.run({ querySelector: '.mermaid' });
+          }, 50);
+          mermaidRendered = true;
+        }
       });
     });
 
@@ -858,11 +874,6 @@
     const searchInput = document.getElementById('searchInput');
     const filterBtns = document.querySelectorAll('.filter-btn');
     const sortSelect = document.getElementById('sortSelect');
-
-    let currentFilter = 'all';
-    let currentSort = 'year-desc';
-    let searchQuery = '';
-
 
     const tabBtns = document.querySelectorAll('.nav-tab-btn');
     tabBtns.forEach(btn => {
