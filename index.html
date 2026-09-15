@@ -859,6 +859,11 @@
     const filterBtns = document.querySelectorAll('.filter-btn');
     const sortSelect = document.getElementById('sortSelect');
 
+    let currentFilter = 'all';
+    let currentSort = 'year-desc';
+    let searchQuery = '';
+
+
     const tabBtns = document.querySelectorAll('.nav-tab-btn');
     tabBtns.forEach(btn => {
       btn.addEventListener('click', () => {
