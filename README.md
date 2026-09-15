@@ -1,26 +1,42 @@
-# Liquid Desiccant Outdoor Air System (LD-DOAS) Research Archive
-> **Core Research Topic**: Paradigm Shift from Conventional Condensation Cooling Dehumidification to Ionic Liquid (CrecoPLUS 5100C / [EMIM][DEP]) Liquid Desiccant Outdoor Air Systems.
+# Semiconductor HVAC & Liquid Desiccant DOAS Research Archive
+> **Core Research Themes**: 
+> 1. Paradigm Shift from Conventional Cooling to Ionic Liquid (CrecoPLUS 5100C) DOAS
+> 2. Global Semiconductor Foundry HVAC Benchmark (TSMC, SEC, SK Hynix, Micron, Intel)
 >
-> 🌐 **Interactive Web Portal**: <a href="https://gusgitgit.github.io/research_paper/" target="_blank" rel="noopener noreferrer">https://gusgitgit.github.io/research_paper/</a> (All links open in a new tab)
+> 🌐 **Interactive Web Portal**: <a href="https://gusgitgit.github.io/research_paper/" target="_blank" rel="noopener noreferrer">https://gusgitgit.github.io/research_paper/</a> (Dual-View Portal with Interactive Diagrams, All links open in a new tab)
 
 ---
 
-## 📌 1. Background & Engineering Paradigm Shift
+## 🏭 1. Global Semiconductor HVAC Benchmark (Fab Infrastructure)
+
+The web portal features an interactive benchmark mode displaying advanced Mermaid.js system architectures. Key components benchmarked include:
+
+1. **Chiller & Heat Recovery (SEC, Micron)**: 
+   - Implementation of Heat Recovery Chillers (HRC) to reclaim PCW waste heat, generating 50~65°C hot water for winter MAU heating, drastically reducing boiler steam.
+2. **MAU & AMC Control (TSMC, SK Hynix)**: 
+   - Mitigating NH3, SOx, and VOCs using Chemical Filters and Air Washers for <3nm nodes. Exhaust Air (EA) run-around heat recovery.
+3. **Cooling Tower & Water Conservation (Intel, SK Hynix)**: 
+   - Deploying Hybrid/Dry cooling towers to abate plume and eliminate evaporative water loss during winter, supporting severe ESG water goals.
+4. **PCW & EUV Precision Cooling (TSMC, ASML)**: 
+   - Secondary cooling loops maintaining ±0.1°C precision via Liquid-to-Liquid heat exchangers and ML-based PICV control.
+5. **AI-HVAC & Digital Twin (SEC, TSMC)**: 
+   - Machine Learning for chiller plant staging and Model Predictive Control (MPC) optimizing total energy.
+
+---
+
+## 📌 2. Background & Engineering Paradigm Shift (LD-DOAS)
 
 ### Why Move from Cooling Coil Dehumidification to Liquid Desiccant (LD-DOAS)?
 1. **Elimination of Deep Subcooling & Reheat**:
-   - *Conventional*: Air must be chilled below its dew point (typically 10–12 °C) to condense moisture, then reheated to comfortable supply air temperatures (18–20 °C), consuming excessive chiller and reheat power.
-   - *Liquid Desiccant (LD-DOAS)*: Moisture is absorbed directly at moderate temperatures (15–20 °C) driven by vapor pressure difference. Latent and sensible loads are completely decoupled, saving **30–50% annual cooling/dehumidification energy**.
+   - Moisture is absorbed directly at moderate temperatures (15–20 °C). Latent and sensible loads are completely decoupled, saving **30–50% annual cooling/dehumidification energy**.
 2. **Hygiene & Air Quality**:
-   - Condensation cooling creates wet cooling coils and drain pans where mold and bacteria proliferate.
-   - Ionic liquids are non-volatile and exhibit natural antimicrobial/bactericidal properties without wet drain pans.
+   - Condensation cooling creates wet cooling coils. Ionic liquids are naturally bactericidal.
 3. **Overcoming Traditional Halide Salt (LiCl/LiBr) Pitfalls**:
-   - Traditional salts suffer from severe metal duct/coil corrosion and risk of crystallization (salting out).
-   - **CrecoPLUS 5100C ([EMIM][DEP])** is **100% non-corrosive to metals**, non-crystallizing, has near-zero vapor pressure (no chemical evaporation into supply air), and can be regenerated using low-grade waste heat or heat pump condenser heat (50–65 °C).
+   - **CrecoPLUS 5100C ([EMIM][DEP])** is **100% non-corrosive to metals**, non-crystallizing, and operates with near-zero vapor pressure.
 
 ---
 
-## 📚 2. Master Literature Index (22 Verified Papers)
+## 📚 3. Master Literature Index (22 Verified Papers)
 
 *All DOI links open in a new tab:*
 
@@ -51,72 +67,16 @@
 
 ---
 
-## 🗂️ 3. Repository Directory Structure
+## 🗂️ 4. Repository Directory Structure
 
 ```text
 research_paper/
-├── index.html                         # Interactive Web Portal (GitHub Pages ready, modal view & filter tabs)
-├── README.md                          # Master literature index & project overview
+├── index.html                         # Interactive Web Portal (Dual View: LD-DOAS & Fab Benchmark)
+├── README.md                          # Master index & project overview
 ├── templates/
 │   └── paper_note_template.md         # Markdown template for recording new papers
 ├── 01_hvac-ldas/                      # System-level LD-DOAS vs. conventional DOAS
-│   ├── 2013_Jeong_Potential_LD_DOAS.md
-│   ├── 2014_Jeong_EnergySavings_LD_DOAS.md
-│   ├── 2018_Park_InternallyCooled_Dehumidifier_Jeong.md
-│   └── 2021_Gurubalan_Review_Dehumidifiers_Regenerators.md
 ├── 02_control-dynamics/               # Transient response, holdup, time constants & control
-│   ├── 2011_Ge_ControlStrategies_LiquidDesiccant.md
-│   ├── 2011_Ge_OptimalControl_LD_DOAS.md
-│   ├── 2016_Luo_CFD_InternallyCooled_Dehumidifier.md
-│   ├── 2016_Wang_DynamicCharacteristics_TimeConstant.md
-│   ├── 2017_Wang_DynamicDehumidifierModel.md
-│   └── 2019_Li_StateSpaceTransientDehumidifier.md
 ├── 03_ionic-liquids/                  # Ionic liquid properties, viscosity & thermodynamics
-│   ├── 2018_Wen_Surfactant_LiquidDesiccant_Regeneration.md
-│   ├── 2022_Luo_Properties_IL_LiquidDesiccant.md
-│   ├── 2022_Skonieczny_EMIMDEP_Thermodynamics.md
-│   └── 2026_Meyer_MutualDiffusivity_IonicLiquids.md
 └── 04_crecoplus-system/               # CrecoPLUS 5100C ([EMIM][DEP]) specific systems
-    ├── 2021_Gao_InternallyCooled_Membrane_Absorber.md
-    ├── 2022_Wang_HeatPump_LiquidDesiccant_Integration.md
-    ├── 2023_Cao_BubbleAbsorption_IonicLiquid_Dehumidification.md
-    ├── 2025_Fu_CrecoPLUS_HeatMassTransfer.md
-    ├── 2025_Liang_WasteHeat_IonicDehumidifier.md
-    ├── 2025_Zheng_Regeneration_IonicLiquid_DOAS.md
-    ├── 2026_Chen_CrecoPLUS_3000CMH_LDAC.md
-    └── 2026_Chiu_CrecoPLUS_Subzero_Defrosting.md
 ```
-
----
-
-## ⚙️ 4. Key Design Guidelines for CrecoPLUS 5100C DOAS
-
-1. **Avoid Liquid Flow Modulation (VAV Liquid Control)**:
-   - High viscosity (20–50 mPa·s) causes surface dewetting at reduced flow rates.
-   - Maintain a constant high liquid circulation rate to guarantee >90% fin-tube surface wetting.
-2. **Primary Control Variable**:
-   - Control supply air humidity by modulating the **internal cooling water valve** (chilled water temperature/flow rate), which has a fast thermal time constant (10–30 seconds vs. minutes for bulk solution concentration change).
-3. **Contactor Selection**:
-   - **Do NOT use spray nozzles** (causes high pressure drop, droplet drift, poor atomization).
-   - Use **internally-cooled fin-tube falling-film contactors** or **hollow-fiber membrane contactors**.
-4. **Pumping & Piping**:
-   - Size piping one diameter step up compared to standard water lines to limit laminar flow friction losses.
-
----
-
-## 🏭 5. Semiconductor HVAC Benchmark (TSMC, Samsung, SK Hynix)
-
-1. **TSMC**: Machine Learning-based Chiller Optimization & AMC Control
-   - Optimizes Chiller/Cooling Tower staging using ML, reducing 5-10% energy.
-   - Heavy focus on AMC (Airborne Molecular Contaminants) filtration in MAUs. 
-   - **LD-DOAS Insight**: Ionic liquids like CrecoPLUS simultaneously absorb moisture and polar gases (NH3, H2S), dramatically extending chemical filter lifespans in cleanrooms.
-
-2. **Samsung Electronics (SEC)**: AI-HVAC & Heat Recovery
-   - Integrates Digital Twin and AI for HVAC operations.
-   - Utilizes Heat Recovery Chillers (HRC) to reclaim massive waste heat from fabs for winter MAU heating.
-   - **LD-DOAS Insight**: 50-65°C low-grade waste heat from SEC's HRCs matches exactly with CrecoPLUS regeneration temperatures, enabling zero-additional-heat dehumidification.
-
-3. **SK Hynix**: Water-Free Cooling & Exhaust Heat Recovery
-   - ESG focus on reducing cooling tower make-up water via hybrid/dry coolers.
-   - EA (Exhaust Air) run-around coils to recover energy.
-   - **LD-DOAS Insight**: Merging EA scavenging (Zheng et al. 2025) into the LD-DOAS regenerator amplifies desorption by 42% while reclaiming exhaust sensible heat.
