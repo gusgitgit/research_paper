@@ -7,7 +7,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
-  <!-- FontAwesome for beautiful icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <style>
@@ -98,7 +97,7 @@
     .arch-card li strong { color: #f8fafc; }
     .formula-box { background: #090d16; border-left: 3px solid var(--primary); padding: 0.85rem 1.25rem; margin: 1.25rem 0; font-family: 'JetBrains Mono', monospace; color: #38bdf8; font-size: 0.95rem; line-height: 1.5; }
     
-    /* HTML/CSS Infographic Dashboards (Replacing Mermaid) */
+    /* HTML/CSS Infographic Dashboards */
     .infographic { display: flex; align-items: center; justify-content: center; gap: 1.5rem; padding: 2.5rem 1.5rem; background: #0b1121; border-radius: 12px; border: 1px solid var(--surface-border); margin: 2rem 0; flex-wrap: wrap; box-shadow: inset 0 2px 15px rgba(0,0,0,0.4); }
     .infographic.scrollable { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; padding: 2.5rem; }
     .ig-node { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.25rem 1.5rem; border-radius: 16px; min-width: 170px; text-align: center; gap: 0.85rem; box-shadow: 0 8px 20px rgba(0,0,0,0.3); transition: transform 0.2s; position: relative; }
@@ -161,12 +160,17 @@
       <header>
         <div class="badge-hero"><i class="fa-solid fa-flask"></i> Liquid Desiccant DOAS Research Archive</div>
         <h1>CrecoPLUS 5100C ([EMIM][DEP]) DOAS Literature Portal</h1>
-        <p class="hero-desc">湲곗〈 ?됯컖媛먯뒿 ?몄“湲곗뿉???댁삩???≪껜瑜??쒖슜??李⑥꽭? ?≪껜???쒖뒿 ?몄“湲?LD-DOAS)濡쒖쓽 ?⑤윭?ㅼ엫 ?꾪솚???꾪븳 ?곌뎄 ?ы꽭?낅땲??</p>
+        <p class="hero-desc">기존 냉각감습 외조기에서 이온성 액체를 활용한 차세대 액체식 제습 외조기(LD-DOAS)로의 패러다임 전환을 위한 연구 포털입니다.</p>
       </header>
+      
+      <!-- FIXED: 3 Tabs properly included here -->
       <div class="nav-tabs">
         <button class="nav-tab-btn active" data-tab="catalog"><i class="fa-solid fa-book"></i> Paper Catalog (22)</button>
-        <button class="nav-tab-btn" data-tab="blueprint"><i class="fa-solid fa-screwdriver-wrench"></i> DOAS Engineering Blueprint</button>`n        <button class="nav-tab-btn" data-tab="benchmark"><i class="fa-solid fa-flask-vial"></i> Working Fluid Benchmark</button>
+        <button class="nav-tab-btn" data-tab="blueprint"><i class="fa-solid fa-screwdriver-wrench"></i> DOAS Engineering Blueprint</button>
+        <button class="nav-tab-btn" data-tab="benchmark"><i class="fa-solid fa-flask-vial"></i> Working Fluid Benchmark</button>
       </div>
+
+      <!-- TAB 1: CATALOG -->
       <div id="tab-catalog" class="tab-pane active">
         <div class="toolbar">
           <div class="filter-tabs">
@@ -189,162 +193,166 @@
         </div>
         <div class="papers-grid" id="papersGrid"></div>
       </div>
+
+      <!-- TAB 2: BLUEPRINT -->
       <div id="tab-blueprint" class="tab-pane">
         <div class="arch-card">
-          <h3><i class="fa-solid fa-water icon" style="color:#38bdf8;"></i> 1. 怨좎젏???좎껜??븰 諛??-?쒕툕 ??λ쪟 ?숉븯留?Falling-Film) 援ъ“</h3>
-          <p>CrecoPLUS 5100C??20~50 mPa쨌s??怨좎젏?꾨? 吏? 湲곗〈 ?ㅽ봽?덉씠 遺꾩궗 諛⑹떇???ъ슜??寃쎌슦 誘몃┰??遺덈웾 諛?洹뱀떖???≪쟻 鍮꾩궛??諛쒖깮?⑸땲?? 蹂??쒖뒪?쒖? <strong>?대? ?됯컖 ?-?쒕툕 ?섏쭅 ?숉븯留?Falling Film) ?묒큺湲?/strong>瑜?梨꾪깮?섏뿬 ?꾨꼍???쒕㈃ ?뽰쓬??Wettability)???뺣낫?⑸땲?? ?먮룄媛 ?믪쓣?섎줉 ?〓쭑 ?먭퍡(灌)媛 ?먭볼?뚯쭛?덈떎.</p>
+          <h3><i class="fa-solid fa-water icon" style="color:#38bdf8;"></i> 1. 고점도 유체역학 및 핀-튜브 대향류 낙하막(Falling-Film) 구조</h3>
+          <p>CrecoPLUS 5100C는 20~50 mPa·s의 고점도를 지녀 기존 스프레이 분사 방식을 사용할 경우 미립화 불량 및 극심한 액적 비산이 발생합니다. 본 시스템은 <strong>내부 냉각 핀-튜브 수직 낙하막(Falling Film) 접촉기</strong>를 채택하여 완벽한 표면 젖음성(Wettability)을 확보합니다. 점도가 높을수록 액막 두께(δ)가 두꺼워집니다.</p>
           <div class="formula-box">
-            <i class="fa-solid fa-square-root-variable"></i> ?숉븯 ?〓쭑 ?먭퍡 怨듭떇: 灌 = (3쨌關_L쨌? / (?_L짼쨌g))^(1/3) ??關_L^(1/3)
+            <i class="fa-solid fa-square-root-variable"></i> 낙하 액막 두께 공식: δ = (3·μ_L·Γ / (ρ_L²·g))^(1/3) ∝ μ_L^(1/3)
           </div>
         </div>
 
         <div class="arch-card">
-          <h3><i class="fa-solid fa-stopwatch icon" style="color:#fbbf24;"></i> 2. ?쒖뼱 ?쒖젙??Time Constant) 洹밸났 諛?PI 諛몃툕 ?쒖뼱 ?꾨왂</h3>
-          <p>?먭볼???〓쭑 ?먭퍡???묒큺湲??대????≪껜 泥대쪟??Liquid Holdup, $M_{sol}$)??洹밸룄濡?利앷??쒖폒, 寃곌낵?곸쑝濡??⑥뒿???쒖뼱??臾쇰━??吏???쒓컙(Time Constant, $\tau \approx M_{sol} / \dot{m}$)???ш쾶 ?섎┰?덈떎. ?대? ?고쉶?섍린 ?꾪븳 湲곌뎄?숈쟻 ?쒖뼱 ?꾨왂? ?ㅼ쓬怨?媛숈뒿?덈떎.</p>
+          <h3><i class="fa-solid fa-stopwatch icon" style="color:#fbbf24;"></i> 2. 제어 시정수(Time Constant) 극복 및 PI 밸브 제어 전략</h3>
+          <p>두꺼운 액막 두께는 접촉기 내부의 액체 체류량(Liquid Holdup)을 극도로 증가시켜, 온습도 제어의 물리적 지연 시간을 크게 늘립니다. 이를 우회하기 위한 기구학적 제어 전략은 다음과 같습니다.</p>
           <ul>
-            <li><strong>?쒖뒿???뚰봽 怨좎젙 ?좊웾 ?댁쟾</strong>: ?〓쭑??源⑥???遺遺?嫄댁“(Dry-out) ?꾩긽??留됯퀬 ?닿탳??硫댁쟻??100% ?뺣낫?섍린 ?꾪빐, ?≪닔???뚰봽??<strong>臾댁“嫄?理쒕? ?뺥뭾??Constant Volume)</strong>?쇰줈 怨좎젙?⑸땲??</li>
-            <li><strong>?됯컖??鍮꾨? ?쒖뼱 (PICV)</strong>: ?뚰봽 ?좊웾??嫄대뱶由щ뒗 ??? ?-?쒕툕 ?대?濡??먮Ⅴ??<strong>15째C 怨듭젙 ?됯컖??PCW) 諛몃툕??媛쒕룄?⑥쓣 PI ?쒖뼱</strong>?섏뿬 異쒓뎄 怨듦린???⑤룄? ?듬룄瑜?利됯컖?곸쑝濡?Fast Response) ?寃잜똿?⑸땲??</li>
+            <li><strong>제습액 펌프 고정 유량 운전</strong>: 액막이 깨지는 현상을 막고 열교환 면적을 100% 확보하기 위해, 흡수액 펌프는 <strong>최대 정풍량(Constant Volume)</strong>으로 고정합니다.</li>
+            <li><strong>냉각수 비례 제어 (PICV)</strong>: 핀-튜브 내부로 흐르는 <strong>공정 냉각수(PCW) 밸브의 개도율을 PI 제어</strong>하여 출구 공기의 온도와 습도를 즉각적으로 타겟팅합니다.</li>
           </ul>
           
           <div class="infographic" style="padding: 1.5rem; justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap;">
             <div class="ig-node node-machine">
               <i class="fa-solid fa-pump-water"></i>
-              <span>?쒖뒿???뚰봽</span>
-              <div class="ig-desc">100% ?뺤쑀??怨좎젙</div>
+              <span>제습액 펌프</span>
+              <div class="ig-desc">100% 정유량 고정</div>
             </div>
             <div class="ig-arrow">
-              <span style="border-color:#ef4444; color:#ef4444; margin-bottom: 0.3rem;">議곗옉 湲덉?</span>
+              <span style="border-color:#ef4444; color:#ef4444; margin-bottom: 0.3rem;">조작 금지</span>
               <i class="fa-solid fa-xmark" style="color:#ef4444; font-size: 1.2rem;"></i>
             </div>
             <div class="ig-node node-cold">
               <i class="fa-solid fa-faucet-drip"></i>
-              <span>?대? ?됯컖??諛몃툕</span>
-              <div class="ig-desc">PICV ?좊웾 鍮꾨? ?쒖뼱</div>
+              <span>내부 냉각수 밸브</span>
+              <div class="ig-desc">PICV 유량 비례 제어</div>
             </div>
             <div class="ig-arrow">
-              <span style="border-color:#22c55e; color:#22c55e; margin-bottom: 0.3rem;">利됯컖 ?묐떟</span>
+              <span style="border-color:#22c55e; color:#22c55e; margin-bottom: 0.3rem;">즉각 응답</span>
               <i class="fa-solid fa-check" style="color:#22c55e; font-size: 1.2rem;"></i>
             </div>
             <div class="ig-node node-eco">
               <i class="fa-solid fa-wind"></i>
-              <span>異쒓뎄 ?듬룄 (SA)</span>
-              <div class="ig-desc">?뺣? ?⑥뒿???寃??ъ꽦</div>
+              <span>출구 습도 (SA)</span>
+              <div class="ig-desc">정밀 온습도 타겟 달성</div>
             </div>
           </div>
         </div>
 
         <div class="arch-card">
-          <h3><i class="fa-solid fa-recycle icon" style="color:#a78bfa;"></i> 3. ?ㅻ궡 諛곌린(EA) ?ㅼ틦鍮덉쭠(Scavenging)???듯븳 ?ъ깮 ?⑥쑉 利앺룺</h3>
-          <p>Zheng et al. (2025) ?곌뎄 諛???Fab) 踰ㅼ튂留덊겕??湲곕컲?섏뿬, ?≪껜 ?ъ깮湲?Regenerator) 痢〓㈃ ?멸린(OA) ?꾩엯 ????ㅻ궡 怨듭“ ??踰꾨젮吏??<strong>嫄댁“???ㅻ궡 諛곌린(EA, Exhaust Air)</strong>瑜??ㅼ틦鍮덉쭠 媛?ㅻ줈 ?ъ엯?⑸땲?? 嫄댁“??EA媛 ?≪닔???쒕㈃???섎텇 遺꾩븬李⑤? 洹밸??붿떆耳? ?덇굅(Desorption) ?깅뒫??<strong>臾대젮 42% ?댁긽 ??쬆</strong>?쒗궎硫댁꽌 ?ъ깮???ъ엯??????덉빟?⑸땲??</p>
+          <h3><i class="fa-solid fa-recycle icon" style="color:#a78bfa;"></i> 3. 실내 배기(EA) 스캐빈징(Scavenging)을 통한 재생 효율 증폭</h3>
+          <p>Zheng et al. (2025) 연구 및 팹(Fab) 벤치마크에 기반하여, 액체 재생기(Regenerator) 측면 외기(OA) 도입 대신 실내 공조 후 버려지는 <strong>건조한 실내 배기(EA, Exhaust Air)</strong>를 스캐빈징 가스로 투입합니다. 건조한 EA가 흡수액 표면의 수분 분압차를 극대화시켜, 탈거(Desorption) 성능을 <strong>무려 42% 이상 폭증</strong>시키면서 재생열 투입을 대폭 절약합니다.</p>
         </div>
       </div>
 
+      <!-- TAB 3: BENCHMARK -->
       <div id="tab-benchmark" class="tab-pane">
         <div class="arch-card">
-          <h3><i class="fa-solid fa-flask-vial icon" style="color:#f43f5e;"></i> ?㎦ ?≪닔??Working Fluid) 臾쇱꽦 ?쒓퀎 ?뚰뙆 踰ㅼ튂留덊겕</h3>
-          <p>湲곗〈 ?곸슜?붾맂 ?≪껜???쒖뒿湲??쇳솕由ы뒳, LiCl / 釉뚮＼?붾━?? LiBr)??移섎챸?곸씤 ?⑥젏??'?λ퉬 遺??怨?'寃곗젙??Crystallization)' 臾몄젣瑜??꾨꼍???닿껐??<strong>CrecoPLUS 5100C ([EMIM][DEP])</strong> ?댁삩?≪껜??臾쇱꽦 鍮꾧탳?쒖엯?덈떎. (Luo & Yang 2022)</p>
+          <h3><i class="fa-solid fa-flask-vial icon" style="color:#f43f5e;"></i> 🧪 흡수제(Working Fluid) 물성 한계 돌파 벤치마크</h3>
+          <p>기존 상용화된 액체식 제습기(염화리튬, LiCl / 브롬화리튬, LiBr)의 치명적인 단점인 '장비 부식'과 '결정화(Crystallization)' 문제를 완벽히 해결한 <strong>CrecoPLUS 5100C ([EMIM][DEP])</strong> 이온액체의 물성 비교표입니다. (Luo & Yang 2022)</p>
           
-          <div style="display:flex; gap: 1rem; flex-wrap:wrap; margin-top: 1.5rem;">
+          <div style="display:flex; gap: 1.5rem; flex-wrap:wrap; margin-top: 2rem;">
             <div class="ig-node node-eco" style="flex: 1; min-width: 250px;">
               <i class="fa-solid fa-shield-halved"></i>
-              <span>?꾩쟾 臾대??앹꽦</span>
-              <div class="ig-desc">Zero Corrosion (?고???遺덊븘??</div>
+              <span>완전 무부식성</span>
+              <div class="ig-desc">Zero Corrosion (티타늄 불필요)</div>
             </div>
             <div class="ig-node node-cold" style="flex: 1; min-width: 250px;">
               <i class="fa-solid fa-snowflake"></i>
-              <span>寃곗젙???먯쿇 諛⑹?</span>
-              <div class="ig-desc">-20???≪긽 ?좎? (?쇱? ?딆쓬)</div>
+              <span>결정화 원천 방지</span>
+              <div class="ig-desc">-20℃ 액상 유지 (얼지 않음)</div>
             </div>
             <div class="ig-node node-purify" style="flex: 1; min-width: 250px;">
               <i class="fa-solid fa-cloud-arrow-up"></i>
-              <span>利앸컻 諛??먯떎 Zero</span>
-              <div class="ig-desc">利앷린??0 kPa (?대┛猷??좎엯 ?꾨Т)</div>
+              <span>증발 및 손실 Zero</span>
+              <div class="ig-desc">증기압 0 kPa (클린룸 유입 전무)</div>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
     <!-- VIEW 2: SEMICONDUCTOR HVAC BENCHMARK -->
     <div id="view-fab-bm" class="main-view">
       <header>
         <div class="badge-hero fab-theme"><i class="fa-solid fa-microchip"></i> Global Semiconductor Fab HVAC Benchmark (2026)</div>
-        <h1 class="fab-title">諛섎룄泥??ㅻ퉬/怨듭“(HVAC) 泥⑤떒 ?좉린???꾩엯 ?숉뼢</h1>
-        <p class="hero-desc">?쇱꽦?꾩옄(Memory/Foundry), SK?섏씠?됱뒪, 留덉씠?щ줎, TSMC, ?명뀛 ??湲濡쒕쾶 Top-Tier 諛섎룄泥?湲곗뾽?ㅼ쓽 ?됰룞湲? ?됯컖?? ?몄“湲?MAU) 諛?珥덉젙諛 ?섏쿂由?PCW) ?ㅻ퉬 愿???좉린???곸슜 踰ㅼ튂留덊겕 ?ъ링 遺꾩꽍 蹂닿퀬?쒖엯?덈떎.</p>
+        <h1 class="fab-title">반도체 설비/공조(HVAC) 첨단 신기술 도입 동향</h1>
+        <p class="hero-desc">삼성전자(Memory/Foundry), SK하이닉스, 마이크론, TSMC, 인텔 등 글로벌 Top-Tier 반도체 기업들의 냉동기, 냉각탑, 외조기(MAU) 및 초정밀 수처리(PCW) 설비 관련 신기술 적용 벤치마크 심층 분석 보고서입니다.</p>
       </header>
 
       <!-- 1. CHILLER -->
       <div class="arch-card">
-        <h3><i class="fa-solid fa-snowflake icon" style="color:#38bdf8;"></i> 1. ?됰룞湲?諛??댄쉶??湲곗닠 (Chiller & Heat Recovery)</h3>
-        <p>諛섎룄泥?怨듭젙 ?λ퉬?먯꽌 ??됱쑝濡?諛쒖깮?섎뒗 ?먯뿴???쒖슜?섎뒗 湲곗닠怨??뺤텞湲??⑥쑉??洹밸??뷀븯???좉린???꾩엯??媛?랁솕?섍퀬 ?덉뒿?덈떎.</p>
+        <h3><i class="fa-solid fa-snowflake icon" style="color:#38bdf8;"></i> 1. 냉동기 및 열회수 기술 (Chiller & Heat Recovery)</h3>
+        <p>반도체 공정 장비에서 대량으로 발생하는 폐열을 활용하는 기술과 압축기 효율을 극대화하는 신기술 도입이 가속화되고 있습니다.</p>
         
-        <h4>?뵻 二쇱슂 諛섎룄泥?湲곗뾽 ?곸슜 ?좉린??/h4>
+        <h4>🔹 주요 반도체 기업 적용 신기술</h4>
         <ul>
-          <li><strong>?쇱꽦?꾩옄 (SEC)</strong>: 25~30째C?????PCW ?먯뿴??踰꾨━吏 ?딄퀬 <strong>珥덈????댄쉶???됰룞湲?HRC)</strong> 利앸컻湲??댁썝?쇰줈 ?뚯닔. ?숈젅湲?MAU ?쒕갑??50~65째C ?⑥닔瑜??앹궛???붿꽍 ?곕즺 蹂댁씪???ㅽ????꾨㈃ ?泥댄븯硫??꾩냼 以묐┰(Net Zero)???좊룄.</li>
-          <li><strong>TSMC</strong>: ????移좊윭 ?뚮옖?몃? ?댁쨷 ?⑤룄 猷⑦봽(High Temp 12-14째C, Low Temp 5-7째C)濡?遺꾨━ ?댁쁺?섏뿬 ?됰룞湲?醫낇빀 COP 洹밸??? 留덇렇?ㅽ떛 踰좎뼱留??먯떖???됰룞湲??곴레 梨꾪깮.</li>
-          <li><strong>留덉씠?щ줎 (Micron)</strong>: 媛蹂???쒕씪?대툕(VSD) ?됰룞湲곗? ?洹쒕え 異뺣깋議?TES) ?쒖뒪?쒖쓣 寃고빀, ?ъ빞 ?꾨젰?쇰줈 異뺣깋 ??二쇨컙 ?쇳겕 ?꾨젰???곸뇙(Peak Shifting)?섎뒗 湲곗닠 ?곸슜.</li>
+          <li><strong>삼성전자 (SEC)</strong>: 25~30°C의 저온 PCW 폐열을 버리지 않고 <strong>초대형 열회수 냉동기(HRC)</strong> 증발기 열원으로 회수. 동절기 MAU 난방용 50~65°C 온수를 생산해 화석 연료 보일러 스팀을 전면 대체하며 탄소 중립(Net Zero)을 선도.</li>
+          <li><strong>TSMC</strong>: 팹 내 칠러 플랜트를 이중 온도 루프(High Temp 12-14°C, Low Temp 5-7°C)로 분리 운영하여 냉동기 종합 COP 극대화. 마그네틱 베어링 원심식 냉동기 적극 채택.</li>
+          <li><strong>마이크론 (Micron)</strong>: 가변속 드라이브(VSD) 냉동기와 대규모 축냉조(TES) 시스템을 결합, 심야 전력으로 축냉 후 주간 피크 전력을 상쇄(Peak Shifting)하는 기술 적용.</li>
         </ul>
         
         <!-- Beautiful HTML Infographic for HRC -->
         <div class="infographic">
           <div class="ig-node node-hot">
             <i class="fa-solid fa-fire"></i>
-            <span>PCW ?먯뿴</span>
-            <div class="ig-desc">25~30째C ?섏닔</div>
+            <span>PCW 폐열</span>
+            <div class="ig-desc">25~30°C 환수</div>
           </div>
           
           <div class="ig-arrow">
-            <span>?댁썝 ?뚯닔</span>
+            <span>열원 회수</span>
             <i class="fa-solid fa-arrow-right"></i>
           </div>
           
           <div class="ig-node node-machine">
             <i class="fa-solid fa-fan"></i>
-            <span>?댄쉶???됰룞湲?br>(HRC)</span>
-            <div class="ig-desc">?덊듃?뚰봽 ?ъ씠???뱀삩</div>
+            <span>열회수 냉동기<br>(HRC)</span>
+            <div class="ig-desc">히트펌프 사이클 승온</div>
           </div>
           
           <div class="ig-arrow">
             <div style="display:flex; flex-direction:column; gap: 1rem;">
-              <span><i class="fa-solid fa-arrow-up-right"></i> ?묒텞 諛쒖뿴</span>
-              <span><i class="fa-solid fa-arrow-down-right"></i> 利앸컻 ?됯컖</span>
+              <span><i class="fa-solid fa-arrow-up-right"></i> 응축 발열</span>
+              <span><i class="fa-solid fa-arrow-down-right"></i> 증발 냉각</span>
             </div>
           </div>
           
           <div class="ig-group">
             <div class="ig-node node-hot-2">
               <i class="fa-solid fa-temperature-arrow-up"></i>
-              <span>?쒕갑 ?⑥닔 怨듦툒</span>
-              <div class="ig-desc">50~65째C (MAU ?쒕갑)</div>
+              <span>난방 온수 공급</span>
+              <div class="ig-desc">50~65°C (MAU 난방)</div>
             </div>
             <div class="ig-node node-cold">
               <i class="fa-solid fa-droplet"></i>
-              <span>PCW ?됱닔 ?ш났湲?/span>
-              <div class="ig-desc">10~15째C (珥덉닚?????ъ엯)</div>
+              <span>PCW 냉수 재공급</span>
+              <div class="ig-desc">10~15°C (초순수 팹 투입)</div>
             </div>
           </div>
         </div>
         
         <div class="formula-box">
-          <i class="fa-solid fa-lightbulb"></i> <strong>LD-DOAS ?듯빀 ?ъ씤??</strong> ?쇱꽦?꾩옄??HRC?먯꽌 ?앹궛?섎뒗 50~65째C ?⑥닔??CrecoPLUS 5100C???ъ깮 ?⑤룄 踰붿쐞? ?뺥솗???쇱튂?⑸땲?? 蹂꾨룄???ㅽ? 蹂댁씪??異붽? ?놁씠 諛섎룄泥?怨듭옣 ?먯뿴留뚯쑝濡??≪껜???쒖뒿 ?몄“湲?LD-DOAS)??100% ?먮┰ ?댁쟾??媛?ν빀?덈떎.
+          <i class="fa-solid fa-lightbulb"></i> <strong>LD-DOAS 융합 포인트:</strong> 삼성전자의 HRC에서 생산되는 50~65°C 온수는 CrecoPLUS 5100C의 재생 온도 범위와 정확히 일치합니다. 별도의 스팀 보일러 추가 없이 반도체 공장 폐열만으로 액체식 제습 외조기(LD-DOAS)의 100% 자립 운전이 가능합니다.
         </div>
       </div>
 
       <!-- 2. MAU & AMC -->
       <div class="arch-card">
-        <h3><i class="fa-solid fa-wind icon" style="color:#a78bfa;"></i> 2. ?몄“湲?MAU) 諛??湲?遺꾩옄 ?ㅼ뿼臾쇱쭏(AMC) ?쒖뼱</h3>
-        <p>?대┛猷??뺣젰 諛??⑥뒿???좎????듭떖??MAU?? 3nm ?댄븯 怨듭젙?먯꽌 ?섏슜??媛?ㅻ굹 ?좉린 ?뷀빀臾?AMC)???⑥씠?쇱뿉 ?≪갑?섏뼱 ?섏쑉???⑥뼱?⑤━???꾩긽??留됯린 ?꾪빐 泥⑤떒 ?꾪꽣留?湲곗닠怨?寃고빀?섍퀬 ?덉뒿?덈떎.</p>
+        <h3><i class="fa-solid fa-wind icon" style="color:#a78bfa;"></i> 2. 외조기(MAU) 및 대기 분자 오염물질(AMC) 제어</h3>
+        <p>클린룸 압력 및 온습도 유지의 핵심인 MAU는, 3nm 이하 공정에서 수용성 가스나 유기 화합물(AMC)이 웨이퍼에 흡착되어 수율을 떨어뜨리는 현상을 막기 위해 첨단 필터링 기술과 결합하고 있습니다.</p>
 
-        <h4>?뵻 二쇱슂 諛섎룄泥?湲곗뾽 ?곸슜 ?좉린??/h4>
+        <h4>🔹 주요 반도체 기업 적용 신기술</h4>
         <ul>
-          <li><strong>TSMC</strong>: 2nm 怨듭젙???꾪빐 ?붾え?덉븘(NH3) ???섏슜??媛?ㅻ? ?ъ쭛?섎뒗 <strong>?쒖닔(UPW) 湲곕컲 ?섏꽭?뺢린(Air Washer)</strong>? <strong>?댁삩援먰솚?섏? 耳誘몄뺄 ?꾪꽣(Chemical Filter)</strong>瑜?吏곷젹 ?ㅻ떒?쇰줈 諛곗튂?섎뒗 ?꾧꺽??AMC ?쒖뼱 ?쒖? ?뺣┰.</li>
-          <li><strong>SK?섏씠?됱뒪</strong>: ???대??먯꽌 諛곗텧?섎뒗 ?ㅻ궡 諛곌린(EA) ?댁쓣 <strong>?곗뼱?쇱슫??肄붿씪(Run-around Coil)</strong>濡??뚯닔?섏뿬 ?멸린(OA)瑜??숈젅湲곗뿉 ?덉뿴?섍굅???섏젅湲곗뿉 ?덈깋?섎뒗 ?쇳겕 而?湲곗닠 ?곸슜.</li>
+          <li><strong>TSMC</strong>: 2nm 공정을 위해 암모니아(NH3) 등 수용성 가스를 포집하는 <strong>순수(UPW) 기반 수세정기(Air Washer)</strong>와 <strong>이온교환수지 케미컬 필터(Chemical Filter)</strong>를 직렬 다단으로 배치하는 엄격한 AMC 제어 표준 확립.</li>
+          <li><strong>SK하이닉스</strong>: 팹 내부에서 배출되는 실내 배기(EA) 열을 <strong>런어라운드 코일(Run-around Coil)</strong>로 회수하여 외기(OA)를 동절기에 예열하거나 하절기에 예냉하는 피크 컷 기술 적용.</li>
         </ul>
 
         <!-- Scrollable Flow Diagram for MAU -->
         <div class="infographic scrollable">
           <div class="ig-node node-machine">
             <i class="fa-solid fa-cloud"></i>
-            <span>?멸린 (OA)</span>
+            <span>외기 (OA)</span>
             <div class="ig-desc">100% Outdoor Air</div>
           </div>
           <div class="ig-arrow"><i class="fa-solid fa-chevron-right"></i></div>
@@ -352,70 +360,70 @@
           <div class="ig-node node-cold">
             <i class="fa-solid fa-temperature-arrow-down"></i>
             <span>Cooling Coil</span>
-            <div class="ig-desc">媛뺤젣 ?됯컖/媛먯뒿</div>
+            <div class="ig-desc">강제 냉각/감습</div>
           </div>
           <div class="ig-arrow"><i class="fa-solid fa-chevron-right"></i></div>
           
           <div class="ig-node node-cold-2">
             <i class="fa-solid fa-shower"></i>
             <span>Air Washer</span>
-            <div class="ig-desc">?섏슜??AMC ?몄젙 (UPW)</div>
+            <div class="ig-desc">수용성 AMC 세정 (UPW)</div>
           </div>
           <div class="ig-arrow"><i class="fa-solid fa-chevron-right"></i></div>
           
           <div class="ig-node node-purify">
             <i class="fa-solid fa-filter"></i>
             <span>Chemical Filter</span>
-            <div class="ig-desc">VOCs 諛??곗꽦 媛??李⑤떒</div>
+            <div class="ig-desc">VOCs 및 산성 가스 차단</div>
           </div>
           <div class="ig-arrow"><i class="fa-solid fa-chevron-right"></i></div>
           
           <div class="ig-node node-eco">
             <i class="fa-solid fa-microchip"></i>
             <span>Cleanroom</span>
-            <div class="ig-desc">怨듭젙 梨붾쾭 怨듦툒</div>
+            <div class="ig-desc">공정 챔버 공급</div>
           </div>
         </div>
         
         <div class="formula-box">
-          <i class="fa-solid fa-lightbulb"></i> <strong>LD-DOAS ?듯빀 ?ъ씤??</strong> CrecoPLUS ?댁삩?≪껜???뷀븰???뱀꽦???쒖뒿 ??NH3, H2S ??洹뱀꽦 AMC瑜?媛뺣젰?섍쾶 ?숈떆 ?≪닔?⑸땲?? LD-DOAS ?꾩엯 ??留됰????뺣젰 ?먯떎???좊컻?섎뒗 ?먯뼱???Air Washer) 怨듭젙???앸왂?섍굅??耳誘몄뺄 ?꾪꽣 ?섎챸???띻린?곸쑝濡??곗옣?????덉뒿?덈떎.
+          <i class="fa-solid fa-lightbulb"></i> <strong>LD-DOAS 융합 포인트:</strong> CrecoPLUS 이온액체는 화학적 특성상 제습 시 NH3, H2S 등 극성 AMC를 강력하게 동시 흡수합니다. LD-DOAS 도입 시 막대한 압력 손실을 유발하는 에어와셔(Air Washer) 공정을 생략하거나 케미컬 필터 수명을 획기적으로 연장할 수 있습니다.
         </div>
       </div>
 
       <!-- 3. COOLING TOWER -->
       <div class="arch-card">
-        <h3><i class="fa-solid fa-tower-observation icon" style="color:#4ade80;"></i> 3. ?됯컖??珥덉젅??諛?諛깆뿰 ?媛?湲곗닠 (Water-Free)</h3>
-        <p>湲濡쒕쾶 ?밸뱾? ESG ?섏옄??蹂댄샇瑜??꾪빐 ?됯컖?묒쓽 利앸컻???뚮え ?듭젣(Water-Free) ?좉린?좎쓣 ?꾩엯 以묒엯?덈떎.</p>
+        <h3><i class="fa-solid fa-tower-observation icon" style="color:#4ade80;"></i> 3. 냉각탑 초절수 및 백연 저감 기술 (Water-Free)</h3>
+        <p>글로벌 팹들은 ESG 수자원 보호를 위해 냉각탑의 증발수 소모 억제(Water-Free) 신기술을 도입 중입니다.</p>
         
-        <h4>?뵻 二쇱슂 諛섎룄泥?湲곗뾽 ?곸슜 ?좉린??/h4>
+        <h4>🔹 주요 반도체 기업 적용 신기술</h4>
         <ul>
-          <li><strong>?명뀛 / SK?섏씠?됱뒪</strong>: ?⑥닚 利앸컻???됯컖?묒쓣 <strong>?섏씠釉뚮━??嫄댁떇/?듭떇 ?꾪솚?? ?됯컖??/strong>?쇰줈 ?꾨㈃ 援먯껜. 寃⑥슱泥좎뿏 臾쇱쓣 肉뚮━吏 ?딄퀬 ??쒕툕 ?닿탳?섏쓣 ?듯븳 '?멸린 ?꾩뿴'留뚯쑝濡??됯컖?섏뿬 利앸컻 ?⑹닔 ?뚮え 100% 李⑤떒 諛?諛깆뿰(Plume) ?먯쿇 諛⑹?.</li>
-          <li><strong>TSMC</strong>: ?됯컖?????ㅼ???Scale) 異뺤쟻??留됯린 ?꾪빐 <strong>?꾪빐??泥섎━ ?μ튂(Electrolytic Scale Removal)</strong> ?곸슜?? ?띿텞 ?ъ씠??CoC)??7~10諛곌퉴吏 ?뚯뼱?щ젮 釉붾줈?곕떎??諛곗텧??洹밴컧.</li>
+          <li><strong>인텔 / SK하이닉스</strong>: 단순 증발식 냉각탑을 <strong>하이브리드(건식/습식 전환형) 냉각탑</strong>으로 전면 교체. 겨울철엔 물을 뿌리지 않고 핀튜브 열교환을 통한 '외기 현열'만으로 냉각하여 증발 용수 소모 100% 차단 및 백연(Plume) 원천 방지.</li>
+          <li><strong>TSMC</strong>: 냉각수 내 스케일(Scale) 축적을 막기 위해 <strong>전해수 처리 장치(Electrolytic Scale Removal)</strong> 상용화. 농축 사이클(CoC)을 7~10배까지 끌어올려 블로우다운 배출수 극감.</li>
         </ul>
 
         <!-- Hybrid Cooling Tower Switch Graphic -->
         <div class="infographic">
           <div class="ig-node node-machine">
             <i class="fa-solid fa-industry"></i>
-            <span>?섏씠釉뚮━???됯컖??/span>
-            <div class="ig-desc">紐⑤뱶 ?먮룞 ?꾪솚??PACT</div>
+            <span>하이브리드 냉각탑</span>
+            <div class="ig-desc">모드 자동 전환형 PACT</div>
           </div>
           
           <div class="ig-arrow">
-            <span>怨꾩젅/?멸린 ?⑤룄</span>
+            <span>계절/외기 온도</span>
             <i class="fa-solid fa-code-branch"></i>
           </div>
           
           <div class="ig-group">
             <div class="ig-node node-cold" style="border: 2px solid #38bdf8;">
               <i class="fa-solid fa-cloud-showers-heavy"></i>
-              <span>?섏젅湲?(?듭떇 紐⑤뱶)</span>
-              <div class="ig-desc">利앸컻 ?좎뿴 ?됯컖 (?⑹닔 ?뚮え 諛쒖깮)</div>
+              <span>하절기 (습식 모드)</span>
+              <div class="ig-desc">증발 잠열 냉각 (용수 소모 발생)</div>
             </div>
             <div class="ig-node node-eco" style="border: 2px solid #4ade80;">
               <i class="fa-solid fa-leaf"></i>
-              <span>?숈젅湲?(嫄댁떇 紐⑤뱶)</span>
-              <div class="ig-desc">?멸린 ?꾩뿴 ??쒕툕 ?됯컖 (?⑹닔 ?뚮え Zero)</div>
+              <span>동절기 (건식 모드)</span>
+              <div class="ig-desc">외기 현열 핀튜브 냉각 (용수 소모 Zero)</div>
             </div>
           </div>
         </div>
@@ -423,13 +431,13 @@
 
       <!-- 4. PCW & SYSTEM -->
       <div class="arch-card">
-        <h3><i class="fa-solid fa-network-wired icon" style="color:#fbbf24;"></i> 4. 怨듭젙 ?됯컖??PCW) ?뺣? ?쒖뼱 諛?AI ?붿????몄쐢</h3>
-        <p>?⑥쐞 硫댁쟻??諛쒖뿴?됱씠 湲됱쬆?섎뒗 EUV ?멸킅 ?λ퉬 ?꾩엯?쇰줈 ?명빐 ?명봽???쒖뼱 泥닿퀎媛 洹쇰낯?곸쑝濡?蹂?뷀븯怨??덉뒿?덈떎.</p>
+        <h3><i class="fa-solid fa-network-wired icon" style="color:#fbbf24;"></i> 4. 공정 냉각수(PCW) 정밀 제어 및 AI 디지털 트윈</h3>
+        <p>단위 면적당 발열량이 급증하는 EUV 노광 장비 도입으로 인해 인프라 제어 체계가 근본적으로 변화하고 있습니다.</p>
 
-        <h4>?뵻 珥덉젙諛 ?섏쿂由?諛?AI ?쒖뼱 ?좉린??/h4>
+        <h4>🔹 초정밀 수처리 및 AI 제어 신기술</h4>
         <ul>
-          <li><strong>EUV ?λ퉬 ?꾩슜 L/L ?닿탳??(TSMC, ASML)</strong>: ?섎갚 kW ?댁쓣 諛쒖궛?섎뒗 ?λ퉬??$\pm0.1^\circ	ext{C}$ 洹뱁븳 ?⑤룄 ?쒖뼱瑜??꾪빐, 硫붿씤 PCW 猷⑦봽???뺣젰 ?붾뱾由쇱쓣 李⑤떒?섎뒗 ?λ퉬 ?꾩슜 <strong>Liquid-to-Liquid (L/L) ?닿탳?섍린 諛?Secondary Loop 紐⑤뱢</strong>??Sub-fab??媛쒕퀎 ?ㅼ튂.</li>
-          <li><strong>AI-HVAC 紐⑤뜽 ?덉륫 ?쒖뼱 (Samsung, TSMC)</strong>: 湲곗〈 PID ?쇱꽌 諛섏궗???쒖뼱瑜??덊뵾. ?뱀쓽 ?붿????몄쐢??援ъ텞?섏뿬 硫곗튌 ??湲곗긽 ?덈낫? ?묒궛 ?ㅼ?以꾩쓣 ?λ윭?앹쑝濡?遺꾩꽍, ?됰룞湲??뚰봽 ?ㅽ깭吏?Staging)怨??됯컖???ㅼ젙 ?⑤룄瑜??좎젣?곸쑝濡?蹂寃쏀븯??MPC(Model Predictive Control) ?곸슜.</li>
+          <li><strong>EUV 장비 전용 L/L 열교환 (TSMC, ASML)</strong>: 수백 kW 열을 발산하는 장비의 극한 온도 제어를 위해, 장비 전용 <strong>Liquid-to-Liquid (L/L) 열교환기 및 Secondary Loop 모듈</strong>을 Sub-fab에 개별 설치.</li>
+          <li><strong>AI-HVAC 모델 예측 제어 (Samsung, TSMC)</strong>: 기존 PID 센서 제어를 탈피. 팹의 디지털 트윈을 구축하여 기상 예보와 양산 스케줄을 딥러닝으로 분석, 냉동기 스태징(Staging)과 냉각수 설정 온도를 선제적으로 변경하는 MPC(Model Predictive Control) 적용.</li>
         </ul>
       </div>
 
@@ -438,15 +446,15 @@
     <!-- Hidden Modals -->
     <div class="modal-overlay" id="modalOverlay">
       <div class="modal-card">
-        <button class="modal-close" id="modalClose">??/button>
+        <button class="modal-close" id="modalClose">✕</button>
         <h2 class="paper-title" id="modalTitle" style="font-size: 1.3rem;">Title</h2>
         <div class="paper-author" id="modalAuthor" style="font-size: 0.95rem;">Authors</div>
         <div class="paper-journal" id="modalJournal">Journal</div>
-        <div class="modal-section"><h4>?뱦 Executive Summary (BLUF)</h4><p id="modalBluf"></p></div>
-        <div class="modal-section"><h4>?뱫 BibTeX Citation</h4><div class="bibtex-box" id="modalBibtex"></div></div>
+        <div class="modal-section"><h4>📌 Executive Summary (BLUF)</h4><p id="modalBluf"></p></div>
+        <div class="modal-section"><h4>📑 BibTeX Citation</h4><div class="bibtex-box" id="modalBibtex"></div></div>
         <div style="display: flex; gap: 0.75rem; margin-top: 1.5rem; justify-content: flex-end;">
-          <a href="#" id="modalNoteLink" class="btn-action btn-note" target="_blank" rel="noopener noreferrer">?뱞 Open Note</a>
-          <a href="#" id="modalDoiLink" class="btn-action btn-doi" target="_blank" rel="noopener noreferrer">?뵕 DOI</a>
+          <a href="#" id="modalNoteLink" class="btn-action btn-note" target="_blank" rel="noopener noreferrer">📄 Open Note</a>
+          <a href="#" id="modalDoiLink" class="btn-action btn-doi" target="_blank" rel="noopener noreferrer">🔗 DOI</a>
         </div>
       </div>
     </div>
@@ -1045,8 +1053,8 @@
             <div class="paper-author">${p.author}</div>
           </div>
           <div class="card-footer">
-            <button class="btn-action btn-note btn-open-modal" data-id="${p.id}">?뵇 View</button>
-            <a href="${p.doi_url}" class="btn-action btn-doi" target="_blank">?뵕 DOI</a>
+            <button class="btn-action btn-note btn-open-modal" data-id="${p.id}">🔍 View</button>
+            <a href="${p.doi_url}" class="btn-action btn-doi" target="_blank">🔗 DOI</a>
           </div>
         `;
         card.addEventListener('click', (e) => {
