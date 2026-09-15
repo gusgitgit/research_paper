@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
   <style>
     :root {
       --bg: #090d16;
@@ -33,29 +33,10 @@
       line-height: 1.6;
       padding: 0 1.25rem 5rem;
     }
-    .container { max-width: 1280px; margin: 0 auto; }
+    .container { max-width: 1300px; margin: 0 auto; }
     
-    /* Top Navigation (Dual Mode) */
-    .top-nav {
-      display: flex;
-      gap: 1rem;
-      padding: 2rem 0;
-      border-bottom: 1px solid var(--surface-border);
-      margin-bottom: 2rem;
-      align-items: center;
-      justify-content: center;
-    }
-    .top-nav-btn {
-      background: transparent;
-      border: 2px solid var(--surface-border);
-      color: var(--text-muted);
-      padding: 0.85rem 1.5rem;
-      border-radius: 12px;
-      font-size: 1.1rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
+    .top-nav { display: flex; gap: 1rem; padding: 2rem 0; border-bottom: 1px solid var(--surface-border); margin-bottom: 2rem; align-items: center; justify-content: center; }
+    .top-nav-btn { background: transparent; border: 2px solid var(--surface-border); color: var(--text-muted); padding: 0.85rem 1.5rem; border-radius: 12px; font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: all 0.2s; }
     .top-nav-btn:hover { border-color: var(--text-dim); color: var(--text-main); }
     .top-nav-btn.active.nav-ld { border-color: var(--primary); color: var(--primary); background: var(--primary-glow); }
     .top-nav-btn.active.nav-fab { border-color: var(--fab-brand); color: var(--fab-brand); background: rgba(244, 63, 94, 0.15); }
@@ -65,66 +46,21 @@
     @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
     header { padding: 1rem 0 2rem; margin-bottom: 2rem; text-align: center; }
-    .badge-hero {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.35rem 0.85rem;
-      border-radius: 9999px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      background: var(--primary-glow);
-      color: var(--primary);
-      border: 1px solid rgba(56, 189, 248, 0.3);
-      margin-bottom: 1rem;
-    }
-    .badge-hero.fab-theme {
-      background: rgba(244, 63, 94, 0.15);
-      color: var(--fab-brand);
-      border-color: rgba(244, 63, 94, 0.3);
-    }
-    h1 {
-      font-size: 2.45rem;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      margin-bottom: 0.75rem;
-      background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, var(--primary) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    h1.fab-title {
-      background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, var(--fab-brand) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+    .badge-hero { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.35rem 0.85rem; border-radius: 9999px; font-size: 0.82rem; font-weight: 600; background: var(--primary-glow); color: var(--primary); border: 1px solid rgba(56, 189, 248, 0.3); margin-bottom: 1rem; }
+    .badge-hero.fab-theme { background: rgba(244, 63, 94, 0.15); color: var(--fab-brand); border-color: rgba(244, 63, 94, 0.3); }
+    h1 { font-size: 2.45rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 0.75rem; background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, var(--primary) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    h1.fab-title { background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, var(--fab-brand) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     .hero-desc { font-size: 1.05rem; color: var(--text-muted); max-width: 800px; margin: 0 auto; line-height: 1.65; }
 
-    /* LD-DOAS Tabs */
-    .nav-tabs {
-      display: flex;
-      gap: 0.5rem;
-      border-bottom: 1px solid var(--surface-border);
-      margin-bottom: 2rem;
-      padding-bottom: 0.5rem;
-    }
-    .nav-tab-btn {
-      background: transparent;
-      border: none;
-      color: var(--text-muted);
-      padding: 0.5rem 1rem;
-      font-size: 0.95rem;
-      font-weight: 600;
-      cursor: pointer;
-      border-bottom: 2px solid transparent;
-      transition: all 0.2s;
-    }
+    /* Nav Tabs & Toolbars */
+    .nav-tabs { display: flex; gap: 0.5rem; border-bottom: 1px solid var(--surface-border); margin-bottom: 2rem; padding-bottom: 0.5rem; }
+    .nav-tab-btn { background: transparent; border: none; color: var(--text-muted); padding: 0.5rem 1rem; font-size: 0.95rem; font-weight: 600; cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.2s; }
     .nav-tab-btn:hover { color: var(--text-main); }
     .nav-tab-btn.active { color: var(--primary); border-bottom-color: var(--primary); }
-    
     .tab-pane { display: none; }
     .tab-pane.active { display: block; animation: fadeIn 0.3s; }
-
-    /* Paper Grid styles */
+    
+    /* Paper Grid */
     .toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem; }
     .filter-tabs { display: flex; gap: 0.5rem; flex-wrap: wrap; }
     .filter-btn { background: var(--surface); border: 1px solid var(--surface-border); color: var(--text-muted); padding: 0.4rem 0.85rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
@@ -134,7 +70,6 @@
     .search-input { padding-left: 2.2rem; }
     .search-box { position: relative; min-width: 250px; }
     .search-icon { position: absolute; left: 0.75rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); }
-    
     .papers-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 1.35rem; }
     .paper-card { background: var(--surface-card); border: 1px solid var(--surface-border); border-radius: 14px; padding: 1.45rem; display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; }
     .paper-card:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); border-color: rgba(56, 189, 248, 0.4); }
@@ -161,16 +96,18 @@
 
     /* BM Architecture Cards */
     .arch-card { background: var(--surface); border: 1px solid var(--surface-border); border-radius: 14px; padding: 2rem; margin-bottom: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-    .arch-card h3 { font-size: 1.35rem; font-weight: 700; color: #ffffff; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+    .arch-card h3 { font-size: 1.45rem; font-weight: 700; color: #ffffff; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid var(--surface-border); padding-bottom: 0.75rem; }
     .arch-card h3 .icon { font-size: 1.5rem; }
-    .arch-card p { font-size: 1rem; color: #cbd5e1; line-height: 1.65; margin-bottom: 1rem; }
+    .arch-card h4 { font-size: 1.1rem; color: #38bdf8; margin: 1.5rem 0 0.5rem; font-weight: 600; }
+    .arch-card p { font-size: 1rem; color: #cbd5e1; line-height: 1.7; margin-bottom: 1rem; }
     .arch-card ul { margin-left: 1.5rem; margin-bottom: 1.5rem; color: #cbd5e1; line-height: 1.6; }
-    .arch-card li { margin-bottom: 0.5rem; }
-    .formula-box { background: #090d16; border-left: 3px solid var(--primary); padding: 0.85rem 1.25rem; margin: 0.85rem 0; font-family: 'JetBrains Mono', monospace; color: #38bdf8; font-size: 0.9rem; }
+    .arch-card li { margin-bottom: 0.75rem; }
+    .arch-card li strong { color: #f8fafc; }
+    .formula-box { background: #090d16; border-left: 3px solid var(--primary); padding: 0.85rem 1.25rem; margin: 1.25rem 0; font-family: 'JetBrains Mono', monospace; color: #38bdf8; font-size: 0.95rem; line-height: 1.5; }
     
-    .mermaid { background: #090d16; padding: 1.5rem; border-radius: 8px; border: 1px solid var(--surface-border); display: flex; justify-content: center; overflow-x: auto; margin: 1.5rem 0; }
+    .mermaid-container { background: #090d16; padding: 2rem; border-radius: 8px; border: 1px solid var(--surface-border); overflow-x: auto; margin: 1.5rem 0; text-align: center; }
 
-    /* Modal styles omitted for brevity but keeping core */
+    /* Modals & Toast */
     .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(9, 13, 22, 0.85); backdrop-filter: blur(4px); z-index: 1000; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
     .modal-overlay.active { opacity: 1; pointer-events: auto; }
     .modal-card { background: var(--surface-card); border: 1px solid var(--surface-border); border-radius: 16px; padding: 2.5rem; max-width: 800px; width: 90%; max-height: 90vh; overflow-y: auto; position: relative; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); }
@@ -180,10 +117,8 @@
     .modal-section h4 { color: #ffffff; margin-bottom: 0.5rem; font-size: 1.05rem; }
     .modal-section p { color: #cbd5e1; font-size: 0.95rem; line-height: 1.6; }
     .bibtex-box { background: #090d16; color: #a5b4fc; padding: 1rem; border-radius: 8px; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; white-space: pre-wrap; overflow-x: auto; margin-top: 0.5rem; border: 1px solid var(--surface-border); }
-
     .toast { position: fixed; bottom: 2rem; right: 2rem; background: var(--primary); color: #090d16; font-weight: 700; padding: 0.75rem 1.25rem; border-radius: 8px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); z-index: 2000; opacity: 0; transform: translateY(10px); transition: all 0.3s; pointer-events: none; }
     .toast.show { opacity: 1; transform: translateY(0); }
-
     footer { text-align: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--surface-border); font-size: 0.85rem; color: #64748b; }
     footer a { color: var(--primary); text-decoration: none; }
   </style>
@@ -191,31 +126,23 @@
 <body>
   <div class="container">
     
-    <!-- Top Level Mode Switcher -->
     <div class="top-nav">
       <button class="top-nav-btn nav-ld active" data-view="view-ld-doas">🔬 1. Liquid Desiccant DOAS Research</button>
       <button class="top-nav-btn nav-fab" data-view="view-fab-bm">🏭 2. Global Semiconductor HVAC Benchmark</button>
     </div>
 
-    <!-- ========================================== -->
-    <!-- VIEW 1: LD-DOAS RESEARCH PORTAL (EXISTING) -->
-    <!-- ========================================== -->
+    <!-- VIEW 1: LD-DOAS -->
     <div id="view-ld-doas" class="main-view active">
       <header>
         <div class="badge-hero">🔬 Liquid Desiccant DOAS Research Archive</div>
         <h1>CrecoPLUS 5100C ([EMIM][DEP]) DOAS Literature Portal</h1>
-        <p class="hero-desc">
-          기존 냉각감습 외조기에서 이온성 액체를 활용한 차세대 액체식 제습 외조기(LD-DOAS)로의 패러다임 전환을 위한 연구 포털입니다.
-        </p>
+        <p class="hero-desc">기존 냉각감습 외조기에서 이온성 액체를 활용한 차세대 액체식 제습 외조기(LD-DOAS)로의 패러다임 전환을 위한 연구 포털입니다.</p>
       </header>
-
       <div class="nav-tabs">
         <button class="nav-tab-btn active" data-tab="catalog">📚 Paper Catalog (22)</button>
         <button class="nav-tab-btn" data-tab="blueprint">⚙️ DOAS Engineering Blueprint</button>
         <button class="nav-tab-btn" data-tab="benchmark">🧪 Working Fluid Benchmark</button>
       </div>
-
-      <!-- TAB 1: CATALOG -->
       <div id="tab-catalog" class="tab-pane active">
         <div class="toolbar">
           <div class="filter-tabs">
@@ -223,186 +150,177 @@
             <button class="filter-btn" data-filter="System DOAS">System DOAS (4)</button>
             <button class="filter-btn" data-filter="CrecoPLUS System">CrecoPLUS System (8)</button>
             <button class="filter-btn" data-filter="Control & Dynamics">Control & Dynamics (6)</button>
-            <button class="filter-btn" data-filter="Ionic Liquids & Fluid">Fluid & Viscosity (4)</button>
+            <button class="filter-btn" data-filter="Ionic Liquids & Fluid">Fluid (4)</button>
           </div>
           <div class="sort-and-search">
             <select class="sort-select" id="sortSelect">
               <option value="year-desc">Year: Newest First</option>
-              <option value="year-asc">Year: Oldest First</option>
               <option value="title-asc">Title: A to Z</option>
             </select>
             <div class="search-box">
               <span class="search-icon">🔍</span>
-              <input type="text" class="search-input" id="searchInput" placeholder="Search title, author, keyword, DOI...">
+              <input type="text" class="search-input" id="searchInput" placeholder="Search title, author, keyword...">
             </div>
           </div>
         </div>
         <div class="papers-grid" id="papersGrid"></div>
       </div>
-
-      <!-- TAB 2: BLUEPRINT -->
       <div id="tab-blueprint" class="tab-pane">
         <div class="arch-card">
-          <h3>1. 고점도(20–50 mPa·s) 유체역학 및 핀-튜브 내부 냉각 구조</h3>
-          <p>스프레이 노즐 방식은 고점도로 인해 미립화 불량과 비산이 발생합니다. 본 시스템은 <strong>핀-튜브 수직 대향류 낙하막(Falling Film) 접촉기</strong>를 채택합니다. 액막 두께는 점도의 1/3승에 비례하므로 유막이 두꺼워집니다.</p>
-          <div class="formula-box">
-            δ = (3·μ_L·Γ / (ρ_L²·g))^(1/3) ∝ μ_L^(1/3)  [Nusselt falling film thickness]
-          </div>
-        </div>
-        <div class="arch-card">
-          <h3>2. 제어 시정수(Time Constant) 극복 및 밸브 제어 전략</h3>
-          <p>두꺼운 액막으로 인해 접촉기 내부 액체 체류량(M_sol)이 커져 용량 시정수(τ ≈ M_sol / m_dot)가 증가합니다. <strong>흡수액 유량을 변조하지 않고 젖음성을 보장하는 고유량으로 고정</strong>하며, <strong>내부 냉각수 공급 밸브(2-way/3-way)를 조절</strong>하여 출구 습도를 신속 제어합니다.</p>
+          <h3>1. 고점도 유체역학 및 핀-튜브 내부 냉각 구조</h3>
+          <p>스프레이 노즐 방식은 고점도로 인해 미립화 불량이 발생합니다. 본 시스템은 <strong>핀-튜브 수직 대향류 낙하막(Falling Film) 접촉기</strong>를 채택합니다.</p>
+          <div class="formula-box">δ = (3·μ_L·Γ / (ρ_L²·g))^(1/3) ∝ μ_L^(1/3)</div>
         </div>
       </div>
-
-      <!-- TAB 3: BENCHMARK -->
       <div id="tab-benchmark" class="tab-pane">
         <div class="arch-card">
-          <h3>🧪 공조용 액체 흡수제 물성 및 성능 비교 벤치마크 (Luo & Yang 2022)</h3>
-          <p>CrecoPLUS 5100C([EMIM][DEP])는 기존 LiCl/LiBr의 금속 부식과 결정화 문제를 해결한 영구 사용 가능한 흡수제입니다.</p>
+          <h3>🧪 공조용 액체 흡수제 물성 비교 (Luo & Yang 2022)</h3>
           <ul>
-            <li><strong>금속 부식성</strong>: 완전 무부식 (Zero Corrosion) vs LiCl (극심한 부식)</li>
-            <li><strong>결정화 한계</strong>: 결정화 없음 (-20℃ 액상 유지) vs LiCl (42wt% 이상 석출)</li>
-            <li><strong>화학 물질 증기압</strong>: ~0 kPa (공기 중 증발 전무)</li>
+            <li><strong>금속 부식성</strong>: CrecoPLUS (완전 무부식) vs LiCl (극심한 부식, 티타늄 필수)</li>
+            <li><strong>결정화 한계</strong>: CrecoPLUS (결정화 없음, -20℃ 액상) vs LiCl (42wt% 이상 석출)</li>
             <li><strong>동적 점도 (25℃)</strong>: 20-50 mPa·s (고점도) vs LiCl (~3 mPa·s)</li>
           </ul>
         </div>
       </div>
     </div>
 
-    <!-- ========================================== -->
-    <!-- VIEW 2: SEMICONDUCTOR HVAC BENCHMARK       -->
-    <!-- ========================================== -->
+    <!-- VIEW 2: SEMICONDUCTOR HVAC BENCHMARK -->
     <div id="view-fab-bm" class="main-view">
       <header>
-        <div class="badge-hero fab-theme">🏭 Global Foundry HVAC Benchmark</div>
-        <h1 class="fab-title">반도체 공조/인프라 첨단 기술 동향 보고서</h1>
-        <p class="hero-desc">
-          TSMC, 삼성전자, SK하이닉스, 마이크론, 인텔 등 글로벌 Top Tier 반도체 팹(Fab)에 적용되는 최신 냉동기, 냉각탑, 외조기(MAU) 및 PCW 벤치마크.
-        </p>
+        <div class="badge-hero fab-theme">🏭 Global Foundry HVAC Benchmark (2026)</div>
+        <h1 class="fab-title">반도체 설비/공조(HVAC) 첨단 신기술 도입 동향</h1>
+        <p class="hero-desc">TSMC, 삼성전자, SK하이닉스, 마이크론, 인텔 등 글로벌 Top-Tier 반도체 기업들의 냉동기, 냉각탑, 외조기(MAU) 및 초정밀 수처리(PCW) 설비 관련 신기술 연구 및 현장 적용 벤치마크 심층 분석 보고서입니다.</p>
       </header>
 
+      <!-- 1. CHILLER -->
       <div class="arch-card">
-        <h3><span class="icon">❄️</span> 1. 냉동기 및 폐열 회수 (Chiller & Heat Recovery) - SEC, Micron</h3>
-        <p>반도체 공정 장비에서 대량으로 발생하는 폐열(PCW Return)을 대기로 버리지 않고, <strong>열회수 냉동기(Heat Recovery Chiller, HRC)</strong>를 통해 동절기 외조기(MAU) 난방용 50~65°C 온수로 승온하여 재사용합니다. 이를 통해 보일러 스팀 사용량을 획기적으로 감축합니다.</p>
-        <div class="mermaid">
-          flowchart LR
-            A[공정 장비 PCW 폐열
-(25~30°C)] -->|Return| B(열회수 냉동기
-Heat Recovery Chiller)
-            B -->|증발기 냉각| C[공정 냉각수 공급
-(10~15°C)]
-            B -->|응축기 발열| D{중저온 온수 생산
-(50~65°C)}
-            D -->|난방 열원| E[동절기 MAU 난방 코일]
-            D -->|LD-DOAS 연계| F[이온액체 재생기
-열원 100% 충당]
-            
-            style B fill:#1e293b,stroke:#f43f5e,stroke-width:2px
-            style D fill:#7f1d1d,stroke:#f87171
-            style F fill:#14532d,stroke:#4ade80,color:#fff
+        <h3><span class="icon">❄️</span> 1. 냉동기 및 열회수 기술 (Chiller & Heat Recovery)</h3>
+        <p>반도체 공정 장비에서 대량으로 발생하는 폐열을 활용하는 기술과 압축기 효율을 극대화하는 신기술 도입이 가속화되고 있습니다.</p>
+        
+        <h4>🔹 주요 반도체 기업 적용 신기술</h4>
+        <ul>
+          <li><strong>삼성전자 (SEC)</strong>: 공정 냉각수(PCW) 환수 라인에서 발생하는 25~30°C의 막대한 저온 폐열을 버리지 않고 <strong>초대형 열회수 냉동기(Heat Recovery Chiller, HRC)</strong>의 증발기 열원으로 회수합니다. 이를 통해 동절기 외조기(MAU) 난방용 50~65°C 온수를 생산, 화석 연료 보일러 스팀 사용량을 전면 대체하며 탄소 중립(Net Zero)을 선도하고 있습니다.</li>
+          <li><strong>TSMC</strong>: 팹 내 칠러 플랜트를 이중 온도 루프(High Temp 12-14°C, Low Temp 5-7°C)로 분리 운영하여 냉동기 종합 COP를 극대화합니다. 오일리스(Oil-free) 마그네틱 베어링 원심식 냉동기를 대거 채택하여 부분 부하(Part Load) 효율을 대폭 끌어올렸습니다.</li>
+          <li><strong>마이크론 (Micron)</strong>: 가변속 드라이브(VSD) 인버터 냉동기와 대규모 축냉조(TES) 시스템을 결합하여, 심야 전력으로 냉수를 축적한 뒤 주간 피크 부하를 상쇄(Peak Shifting)하는 전력망 최적화 연구를 현장에 적용 중입니다.</li>
+        </ul>
+        
+        <div class="mermaid-container">
+          <div class="mermaid">
+            flowchart LR
+              A["공정 장비 PCW 폐열<br/>(25~30°C)"] -->|Return 열원| B("열회수 냉동기<br/>(Heat Recovery Chiller)")
+              B -->|증발기 냉각| C["초순수 PCW 재공급<br/>(10~15°C)"]
+              B -->|응축기 발열| D{"중저온 온수 생산<br/>(50~65°C)"}
+              D --> E["MAU 동절기 난방 코일"]
+              D --> F["LD-DOAS 이온액체 재생열원"]
+              
+              style B fill:#1e293b,stroke:#f43f5e,stroke-width:2px
+              style D fill:#7f1d1d,stroke:#f87171,color:#fff
+              style F fill:#14532d,stroke:#4ade80,color:#fff
+          </div>
         </div>
+        
         <div class="formula-box">
-          ★ LD-DOAS 융합 인사이트: HRC가 생산하는 60°C 온수는 CrecoPLUS 재생 온도(50~65°C)와 정확히 일치하여 1차 열원 추가 투입 없이 제습 사이클이 완성됩니다.
+          ★ LD-DOAS 융합 포인트: 삼성전자의 HRC에서 생산되는 50~65°C 온수는 CrecoPLUS 5100C의 재생 온도 범위와 정확히 일치합니다. 즉, 별도의 고압 스팀 보일러 추가 없이 반도체 공장 폐열만으로 액체식 제습 외조기(LD-DOAS)의 무탄소 100% 자립 운전이 가능합니다.
         </div>
       </div>
 
+      <!-- 2. COOLING TOWER -->
       <div class="arch-card">
-        <h3><span class="icon">🌬️</span> 2. 외조기(MAU) AMC 제어 및 열회수 - TSMC, SK Hynix</h3>
-        <p>3nm 이하 미세 공정에서는 수용성 가스(NH3, SOx) 및 유기화합물(VOCs) 형태의 <strong>AMC (Airborne Molecular Contaminants)</strong> 제어가 수율의 핵심입니다. TSMC와 Micron은 케미컬 필터와 수세정기(Air Washer)를 직렬로 구성하며, SK하이닉스는 실내 배기(EA) 열을 런어라운드 코일로 회수합니다.</p>
-        <div class="mermaid">
-          flowchart LR
-            OA[외기 OA 도입] --> PF[Pre-Filter]
-            PF --> CC[Cooling Coil
-냉각감습]
-            CC --> HC[Heating Coil
-재열]
-            HC --> AW[Air Washer
-수용성 AMC 포집]
-            AW --> CF[Chemical Filter
-VOCs 포집]
-            CF --> SF[Supply Fan
-Cleanroom 공급]
-            
-            EA[실내 배기 EA] -->|런어라운드 코일| RC[열회수 (Sensible)]
-            RC -.->|동절기 예열| PF
-            
-            style AW fill:#0c4a6e,stroke:#38bdf8
-            style CF fill:#4c1d95,stroke:#a78bfa
+        <h3><span class="icon">🗼</span> 2. 냉각탑 초절수 및 백연 저감 기술 (Cooling Tower & Water-Free Tech)</h3>
+        <p>반도체 생산량 증가에 따른 물 부족(Water Stress)을 해결하기 위해, ESG 경영의 최우선 순위로 냉각탑의 증발수 소모 억제(Water-Free) 신기술이 도입되고 있습니다.</p>
+        
+        <h4>🔹 주요 반도체 기업 적용 신기술</h4>
+        <ul>
+          <li><strong>인텔 (Intel)</strong>: 'Net Positive Water(물 사용량 순증가 제로)' 선언 이후, 단순 증발식 냉각탑을 <strong>하이브리드(건식/습식 전환형) 냉각탑</strong>으로 전면 교체 중입니다. 또한, 냉각탑 블로우다운(Blow-down) 폐수를 다중 역삼투압(RO) 시스템으로 걸러 초순수로 재사용하는 극한의 리사이클 기술을 적용했습니다.</li>
+          <li><strong>SK하이닉스 (SK Hynix)</strong>: 용수 소모 저감을 위해 하이브리드 냉각탑(PACT: Plume Abatement Cooling Tower)을 확대 적용하고 있습니다. 특히 겨울철이나 중간기에는 물을 흩뿌리지 않고 핀튜브 열교환기를 통한 외기 현열(Sensible) 냉각만으로 운전하여 증발 용수 소모를 100% 차단하며, 환경 민원 원인인 백연(Plume)을 원천 방지합니다.</li>
+          <li><strong>TSMC</strong>: 냉각수 내 스케일(Scale) 축적을 막기 위해 <strong>전해수 처리 장치(Electrolytic Scale Removal)</strong> 기술을 상용화했습니다. 약품(Chemicals) 투입 없이 농축 사이클(CoC, Cycles of Concentration)을 기존 4배에서 7~10배까지 비약적으로 끌어올려 배출수를 극감시킵니다.</li>
+        </ul>
+
+        <div class="mermaid-container">
+          <div class="mermaid">
+            graph TD
+              A["PCW 환수 37°C"] --> B{"하이브리드 냉각탑<br/>(Dry / Wet 전환형)"}
+              B -->|하절기 습식 모드| C["증발 잠열 냉각<br/>(용수 소모 발생)"]
+              B -->|동절기 건식 모드| D["외기 현열 냉각 Finned Tube<br/>(용수 소모 Zero / 백연 방지)"]
+              C --> E["냉각수 공급 32°C"]
+              D --> E
+              F["MAU 응축수 (초순수급 Condensate)"] -.->|수질 정화/보충수 회수| C
+              
+              style B fill:#1e293b,stroke:#38bdf8,stroke-width:2px
+              style D fill:#1e293b,stroke:#34d399,stroke-width:2px
+          </div>
         </div>
+      </div>
+
+      <!-- 3. MAU & AMC -->
+      <div class="arch-card">
+        <h3><span class="icon">🌬️</span> 3. 외조기(MAU) 및 대기 분자 오염물질(AMC) 제어 기술</h3>
+        <p>클린룸 압력 및 온습도 유지의 핵심인 MAU는, 3nm 이하 공정에서 미세 수용성 가스나 유기 화합물(AMC)이 웨이퍼에 흡착되어 수율을 떨어뜨리는 문제를 막기 위해 첨단 필터링 기술과 결합하고 있습니다.</p>
+
+        <h4>🔹 주요 반도체 기업 적용 신기술</h4>
+        <ul>
+          <li><strong>TSMC</strong>: 2nm 공정을 위해 암모니아(NH3), 불화수소(HF) 등 수용성 가스를 포집하는 <strong>순수(UPW) 기반 수세정기(Air Washer)</strong>와, 유기화합물(VOC) 및 산/알칼리 가스를 제거하는 <strong>이온교환수지 케미컬 필터(Chemical Filter)</strong>를 직렬 다단으로 배치하는 엄격한 AMC 제어 표준을 확립했습니다. HEPA 필터 역시 보론(Boron) 아웃가싱이 없는 PTFE 소재로 전면 전환했습니다.</li>
+          <li><strong>SK하이닉스</strong>: 외조기 유입 외기의 피크 부하를 낮추기 위해, 반도체 팹 내부에서 배출되는 실내 배기(EA) 열을 <strong>런어라운드 코일(Run-around Coil)</strong>로 회수하여 외기(OA)를 동절기에 예열하거나 하절기에 예냉하는 현열 회수 시스템을 대대적으로 구축했습니다.</li>
+          <li><strong>마이크론 (Micron)</strong>: MAU 습도 제어를 위해 기존의 고에너지 스팀 가습기 대신 초음파 미스트 가습 또는 고압수 분무 가습을 도입, 증기 생산용 천연가스 보일러 의존도를 줄이고 있습니다.</li>
+        </ul>
+
+        <div class="mermaid-container">
+          <div class="mermaid">
+            flowchart LR
+              OA["외기 (OA)"] --> PF["Pre-Filter<br/>(분진 제어)"]
+              PF --> CC["Cooling Coil<br/>(강제 냉각감습)"]
+              CC --> HC["Heating Coil<br/>(재열 온도 보상)"]
+              HC --> AW["Air Washer<br/>(UPW 활용 수용성 AMC 제어)"]
+              AW --> CF["Chemical Filter<br/>(이온교환수지, VOC 제어)"]
+              CF --> SF["Supply Fan<br/>(Cleanroom)"]
+              
+              EA["팹 배기 (EA)"] -->|Run-around| RC["현열 열회수(Sensible)"]
+              RC -.->|동절기 예열| PF
+              
+              style AW fill:#0c4a6e,stroke:#38bdf8
+              style CF fill:#4c1d95,stroke:#a78bfa
+          </div>
+        </div>
+        
         <div class="formula-box">
-          ★ LD-DOAS 융합 인사이트: 이온성 액체(CrecoPLUS)는 제습과 동시에 암모니아(NH3), 황화수소(H2S) 등 극성 AMC를 화학적으로 동시 흡수하므로, 고가의 케미컬 필터 교체 주기를 수 배 연장시킵니다.
+          ★ LD-DOAS 융합 포인트: CrecoPLUS 이온액체는 본연의 화학적 특성상 제습 과정에서 NH3, H2S 등 극성 AMC(공기오염물질)를 강력하게 동시 흡수합니다. 즉, LD-DOAS를 도입하면 막대한 압력 손실을 유발하는 에어와셔(Air Washer) 공정을 생략하거나 케미컬 필터의 교체 수명을 수 배 이상 연장시킬 수 있습니다.
         </div>
       </div>
 
+      <!-- 4. PCW & SYSTEM -->
       <div class="arch-card">
-        <h3><span class="icon">🗼</span> 3. 냉각탑 초절수 및 백연 저감 (Water-Free & Plume Abatement) - Intel, SK Hynix</h3>
-        <p>글로벌 팹들은 ESG(수자원 보호) 경영의 일환으로 냉각탑 보충수(Make-up water)를 최소화하는 하이브리드 냉각탑(건식+습식)을 전면 도입 중입니다. 특히 겨울철에는 물 증발이 전혀 없는 건식(Dry) 모드로 운전하여 백연(Plume)을 방지하고 용수를 100% 절감합니다.</p>
-        <div class="mermaid">
-          graph TD
-            A[냉각수 환수 37°C] --> B{건식/습식 하이브리드 냉각탑}
-            B -->|하절기 (습식 모드)| C[살수 및 증발 잠열 냉각
-(용수 소모 발생)]
-            B -->|동절기 (건식 모드)| D[외기 현열 냉각 Finned Tube
-(용수 소모 Zero / 백연 방지)]
-            C --> E[냉각수 공급 32°C]
-            D --> E
-            
-            F[MAU 응축수 (Condensate)] -.->|응축수 회수 시스템| C
-            style B fill:#1e293b,stroke:#38bdf8,stroke-width:2px
-            style D fill:#1e293b,stroke:#34d399,stroke-width:2px
-        </div>
-      </div>
+        <h3><span class="icon">💧</span> 4. 공정 냉각수(PCW) 정밀 제어 및 AI 디지털 트윈</h3>
+        <p>EUV 장비 도입과 단위 면적당 발열량 급증으로 인프라 제어 체계가 근본적으로 변화하고 있습니다.</p>
 
-      <div class="arch-card">
-        <h3><span class="icon">💧</span> 4. 공정 냉각수 (PCW) 및 EUV 정밀 냉각 - TSMC, ASML Interface</h3>
-        <p>EUV 노광장비 등 초정밀 장비는 수백 kW의 열을 발산하면서도 $\pm0.1^\circ$C 이내의 정밀한 온도 제어를 요구합니다. 메인 냉각 루프(Primary Loop)와 분리된 장비 전용 초정밀 2차 루프(Secondary Loop)와 FFU 연동 L/L(Liquid-to-Liquid) 열교환기를 적용합니다.</p>
-        <p>특히 펌프 인버터(VSD)와 비례제어 밸브(PICV)를 머신러닝으로 제어하여 장비 부하 변동에 1초 이내로 대응합니다.</p>
-      </div>
-      
-      <div class="arch-card">
-        <h3><span class="icon">🧠</span> 5. AI-HVAC 및 디지털 트윈 제어 - Samsung, TSMC</h3>
-        <p>공조 제어 아키텍처가 단순 PID 기반에서 <strong>모델 기반 예측 제어(MPC) 및 머신러닝(ML)</strong> 기반으로 진화했습니다. 팹 전체의 디지털 트윈을 구축하여 날씨 예보, 공정 스케줄, 전력 단가를 종합적으로 분석하여 최적의 냉동기 대수 제어(Staging)와 설정 온도(Set-point)를 능동적으로 변경합니다.</p>
+        <h4>🔹 초정밀 수처리 및 AI 제어 신기술</h4>
+        <ul>
+          <li><strong>EUV 장비 전용 L/L 열교환 (TSMC, ASML Interface)</strong>: 수백 kW의 열을 발산하는 EUV 노광 장비는 $\pm0.1^\circ	ext{C}$의 극한 온도 제어를 요구합니다. TSMC는 공장 메인 PCW 루프(Primary Loop)가 겪는 수압/온도 흔들림을 장비와 분리하기 위해, 팹 플로어(Sub-fab) 하부에 장비 전용 <strong>Liquid-to-Liquid (L/L) 열교환기 및 Secondary Loop 모듈</strong>을 개별 설치합니다. 인버터(VSD) 펌프와 비례제어밸브(PICV)를 0.1초 단위로 제어합니다.</li>
+          <li><strong>AI-HVAC 및 디지털 트윈 제어 (Samsung, TSMC)</strong>: 기존의 단순 PID 센서 반사형 제어를 넘어서, <strong>모델 기반 예측 제어(MPC, Model Predictive Control)</strong>가 도입되었습니다. 삼성전자는 팹의 디지털 트윈을 구축하여 며칠 뒤의 기상 예보, 팹 양산 스케줄, 전력 단가 변동을 머신러닝으로 분석, 냉동기 펌프 스태징(Staging)과 냉각수 설정 온도(Set-point)를 AI가 능동적으로 사전 변경하여 플랜트 전체 에너지를 최소화하는 연구를 현장 적용 중입니다.</li>
+        </ul>
       </div>
 
     </div>
 
-    <!-- MODAL / DRAWER FOR PAPERS (Hidden globally) -->
+    <!-- Hidden Modals and JS -->
     <div class="modal-overlay" id="modalOverlay">
       <div class="modal-card">
         <button class="modal-close" id="modalClose">✕</button>
-        <span class="category-badge" id="modalBadge">Category</span>
-        <span class="paper-year" id="modalYear" style="margin-left: 0.5rem;">2025</span>
-        <h2 class="paper-title" id="modalTitle" style="font-size: 1.3rem; margin-top: 0.75rem;">Title</h2>
+        <h2 class="paper-title" id="modalTitle" style="font-size: 1.3rem;">Title</h2>
         <div class="paper-author" id="modalAuthor" style="font-size: 0.95rem;">Authors</div>
         <div class="paper-journal" id="modalJournal">Journal</div>
         <div class="modal-section"><h4>📌 Executive Summary (BLUF)</h4><p id="modalBluf"></p></div>
-        <div class="modal-section"><h4>🧪 Parameters & Setup</h4><p id="modalParams"></p></div>
-        <div class="modal-section"><h4>⚡ Control & Dynamics Insight</h4><p id="modalControl"></p></div>
-        <div class="modal-section"><h4>🎯 Actionable Takeaways for CrecoPLUS DOAS</h4><p id="modalTakeaway"></p></div>
-        <div class="modal-section">
-          <h4>📑 BibTeX Citation</h4>
-          <div class="bibtex-box" id="modalBibtex"></div>
-          <button class="btn-action btn-doi" id="btnCopyBibtex" style="margin-top: 0.5rem;">📋 Copy BibTeX</button>
-        </div>
+        <div class="modal-section"><h4>📑 BibTeX Citation</h4><div class="bibtex-box" id="modalBibtex"></div></div>
         <div style="display: flex; gap: 0.75rem; margin-top: 1.5rem; justify-content: flex-end;">
-          <a href="#" id="modalNoteLink" class="btn-action btn-note" target="_blank" rel="noopener noreferrer">📄 Open Full Markdown Note</a>
-          <a href="#" id="modalDoiLink" class="btn-action btn-doi" target="_blank" rel="noopener noreferrer">🔗 Open Official DOI ↗</a>
+          <a href="#" id="modalNoteLink" class="btn-action btn-note" target="_blank" rel="noopener noreferrer">📄 Open Note</a>
+          <a href="#" id="modalDoiLink" class="btn-action btn-doi" target="_blank" rel="noopener noreferrer">🔗 DOI</a>
         </div>
       </div>
     </div>
-    <div class="toast" id="toast">BibTeX Copied to Clipboard!</div>
-
-    <footer>
-      <p>Curated & Architected by Gus. (25.11.21. 출생 아들의 아버지) | Repository: <a href="https://github.com/gusgitgit/research_paper" target="_blank" rel="noopener noreferrer">github.com/gusgitgit/research_paper</a></p>
-      <p style="margin-top: 0.3rem;">Zero-Hallucination Policy: All 22 cited papers are verified via OpenAlex, CrossRef, and Publisher APIs.</p>
-    </footer>
   </div>
 
   <script>
-    mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+    mermaid.initialize({ startOnLoad: true, theme: 'dark', securityLevel: 'loose' });
 
-    // View Switching Logic
     const topNavBtns = document.querySelectorAll('.top-nav-btn');
     const mainViews = document.querySelectorAll('.main-view');
 
@@ -936,14 +854,11 @@ Cleanroom 공급]
     "bibtex": "@article{Wen2018,\n  author = {Wen, T., Lu, L., Dong, C.},\n  title = {Investigation on the regeneration performance of liquid desiccant by adding surfactant PVP-K30},\n  journal = {Int. J. Heat and Mass Transfer},\n  year = {2018},\n  doi = {10.1016/j.ijheatmasstransfer.2018.03.005}\n}"
   }
 ];
-
     const grid = document.getElementById('papersGrid');
     const searchInput = document.getElementById('searchInput');
     const filterBtns = document.querySelectorAll('.filter-btn');
     const sortSelect = document.getElementById('sortSelect');
-    const toast = document.getElementById('toast');
 
-    // Tab Navigation for View 1
     const tabBtns = document.querySelectorAll('.nav-tab-btn');
     tabBtns.forEach(btn => {
       btn.addEventListener('click', () => {
@@ -954,37 +869,8 @@ Cleanroom 공급]
       });
     });
 
-    // Modal elements
     const modalOverlay = document.getElementById('modalOverlay');
     const modalClose = document.getElementById('modalClose');
-    const modalBadge = document.getElementById('modalBadge');
-    const modalYear = document.getElementById('modalYear');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalAuthor = document.getElementById('modalAuthor');
-    const modalJournal = document.getElementById('modalJournal');
-    const modalBluf = document.getElementById('modalBluf');
-    const modalParams = document.getElementById('modalParams');
-    const modalControl = document.getElementById('modalControl');
-    const modalTakeaway = document.getElementById('modalTakeaway');
-    const modalBibtex = document.getElementById('modalBibtex');
-    const modalNoteLink = document.getElementById('modalNoteLink');
-    const modalDoiLink = document.getElementById('modalDoiLink');
-    const btnCopyBibtex = document.getElementById('btnCopyBibtex');
-
-    let currentFilter = 'all';
-    let currentSort = 'year-desc';
-    let searchQuery = '';
-    let currentModalBibtex = '';
-
-    function showToast(msg) {
-      toast.textContent = msg;
-      toast.classList.add('show');
-      setTimeout(() => toast.classList.remove('show'), 2000);
-    }
-    function copyToClipboard(text) {
-      navigator.clipboard.writeText(text).then(() => showToast('BibTeX Copied to Clipboard!'));
-    }
-    btnCopyBibtex.addEventListener('click', () => copyToClipboard(currentModalBibtex));
 
     modalClose.addEventListener('click', () => modalOverlay.classList.remove('active'));
     modalOverlay.addEventListener('click', (e) => {
@@ -992,20 +878,13 @@ Cleanroom 공급]
     });
 
     function openModal(p) {
-      modalBadge.className = 'category-badge ' + p.cat_class;
-      modalBadge.textContent = p.category;
-      modalYear.textContent = p.year;
-      modalTitle.textContent = p.title;
-      modalAuthor.textContent = p.author;
-      modalJournal.textContent = p.journal;
-      modalBluf.textContent = p.bluf;
-      modalParams.textContent = p.params;
-      modalControl.textContent = p.control_insight;
-      modalTakeaway.textContent = p.takeaway;
-      modalBibtex.textContent = p.bibtex;
-      currentModalBibtex = p.bibtex;
-      modalNoteLink.href = 'https://github.com/gusgitgit/research_paper/blob/main/' + p.file_url;
-      modalDoiLink.href = p.doi_url;
+      document.getElementById('modalTitle').textContent = p.title;
+      document.getElementById('modalAuthor').textContent = p.author;
+      document.getElementById('modalJournal').textContent = p.journal;
+      document.getElementById('modalBluf').textContent = p.bluf;
+      document.getElementById('modalBibtex').textContent = p.bibtex;
+      document.getElementById('modalNoteLink').href = 'https://github.com/gusgitgit/research_paper/blob/main/' + p.file_url;
+      document.getElementById('modalDoiLink').href = p.doi_url;
       modalOverlay.classList.add('active');
     }
 
@@ -1014,44 +893,26 @@ Cleanroom 공급]
       grid.innerHTML = '';
       let filtered = papers.filter(p => {
         const matchesCategory = (currentFilter === 'all') || (p.category === currentFilter);
-        const q = searchQuery.toLowerCase();
-        const matchesSearch = !q || 
-          p.title.toLowerCase().includes(q) || 
-          p.author.toLowerCase().includes(q) || 
-          p.summary.toLowerCase().includes(q) || 
-          p.doi.toLowerCase().includes(q) ||
-          p.tags.some(t => t.toLowerCase().includes(q));
+        const q = searchQuery ? searchQuery.toLowerCase() : '';
+        const matchesSearch = !q || p.title.toLowerCase().includes(q) || p.author.toLowerCase().includes(q);
         return matchesCategory && matchesSearch;
       });
 
       if (currentSort === 'year-desc') filtered.sort((a, b) => b.year - a.year);
-      else if (currentSort === 'year-asc') filtered.sort((a, b) => a.year - b.year);
       else if (currentSort === 'title-asc') filtered.sort((a, b) => a.title.localeCompare(b.title));
-
-      if (filtered.length === 0) {
-        grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 3rem; color: #64748b;">검색 조건에 일치하는 논문이 없습니다.</div>';
-        return;
-      }
 
       filtered.forEach(p => {
         const card = document.createElement('div');
         card.className = 'paper-card';
         card.innerHTML = `
           <div>
-            <div class="card-header">
-              <span class="category-badge ${p.cat_class}">${p.category}</span>
-              <span class="paper-year">${p.year}</span>
-            </div>
-            <h3 class="paper-title"><a href="${p.doi_url}" target="_blank" rel="noopener noreferrer">${p.title}</a></h3>
+            <div class="card-header"><span class="category-badge ${p.cat_class}">${p.category}</span><span class="paper-year">${p.year}</span></div>
+            <h3 class="paper-title"><a href="${p.doi_url}" target="_blank">${p.title}</a></h3>
             <div class="paper-author">${p.author}</div>
-            <div class="paper-journal">${p.journal}</div>
-            <div class="paper-summary"><strong>Core Insight:</strong> ${p.summary}</div>
-            <div class="tag-list">${p.tags.map(t => `<span class="tag-item">#${t}</span>`).join('')}</div>
           </div>
           <div class="card-footer">
-            <button class="btn-action btn-note btn-open-modal" data-id="${p.id}">🔍 Quick View</button>
-            <button class="btn-action btn-bib btn-copy-card-bib" data-id="${p.id}" title="Copy BibTeX">📋 BibTeX</button>
-            <a href="${p.doi_url}" class="btn-action btn-doi" target="_blank" rel="noopener noreferrer">🔗 DOI ↗</a>
+            <button class="btn-action btn-note btn-open-modal" data-id="${p.id}">🔍 View</button>
+            <a href="${p.doi_url}" class="btn-action btn-doi" target="_blank">🔗 DOI</a>
           </div>
         `;
         card.addEventListener('click', (e) => {
@@ -1065,13 +926,6 @@ Cleanroom 공급]
           e.stopPropagation();
           const p = papers.find(item => item.id == btn.getAttribute('data-id'));
           openModal(p);
-        });
-      });
-      document.querySelectorAll('.btn-copy-card-bib').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          const p = papers.find(item => item.id == btn.getAttribute('data-id'));
-          copyToClipboard(p.bibtex);
         });
       });
     }
