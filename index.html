@@ -1060,13 +1060,16 @@
         card.addEventListener('click', (e) => {
           if (!e.target.closest('a') && !e.target.closest('button')) openModal(p);
         });
+
+        const openModalBtn = card.querySelector('.btn-open-modal');
+        if (openModalBtn) {
+          openModalBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openModal(p);
+          });
+        }
+
         grid.appendChild(card);
-      });
-      document.querySelectorAll('.btn-open-modal').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          openModal(papers.find(item => item.id == btn.getAttribute('data-id')));
-        });
       });
     }
 
