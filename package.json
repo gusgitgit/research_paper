@@ -1,0 +1,24 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "> **Core Research Themes**:  > 1. Paradigm Shift from Conventional Cooling to Ionic Liquid (CrecoPLUS 5100C) DOAS > 2. Global Semiconductor Foundry HVAC Benchmark (TSMC, SEC, SK Hynix, Micron, Intel) > > 🌐 **Interactive Web Portal**: <a href=\"https://gusgitgit.github.io/research_paper/\" target=\"_blank\" rel=\"noopener noreferrer\">https://gusgitgit.github.io/research_paper/</a> (Dual-View Portal with Interactive Diagrams, All links open in a new tab)",
+  "main": "benchmark.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gusgitgit/research_paper.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/gusgitgit/research_paper/issues"
+  },
+  "homepage": "https://github.com/gusgitgit/research_paper#readme",
+  "dependencies": {
+    "jsdom": "^29.1.1"
+  }
+}
