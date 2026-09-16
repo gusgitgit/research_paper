@@ -21,6 +21,8 @@ The web portal features an interactive benchmark mode displaying advanced Mermai
    - Secondary cooling loops maintaining ±0.1°C precision via Liquid-to-Liquid heat exchangers and ML-based PICV control.
 5. **AI-HVAC & Digital Twin (SEC, TSMC)**: 
    - Machine Learning for chiller plant staging and Model Predictive Control (MPC) optimizing total energy.
+6. **Next-Gen HVAC Business Model & Future Tasks**:
+   - Transitioning to EaaS (Energy as a Service), monetizing Carbon Credits, and packaging Total Water Management (TWM) solutions. Focus on scaling LD-DOAS and building cleanroom reliability databases.
 
 ---
 
